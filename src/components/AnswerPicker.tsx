@@ -4,11 +4,18 @@ import ButtonGroup from "@material-ui/core/ButtonGroup";
 
 import { Answer } from "../types/Question";
 
-export default function AnswerPicker({ answers }: { answers: Answer[] }) {
+interface Props {
+  answers: Answer[];
+  onPick: (answer: Answer) => void;
+}
+
+export default function AnswerPicker({ answers, onPick }: Props) {
   return (
     <ButtonGroup fullWidth variant="contained">
       {answers.map(answer => (
-        <Button>{answer.text}</Button>
+        <Button key={answer.text} onClick={() => onPick(answer)}>
+          {answer.text}
+        </Button>
       ))}
     </ButtonGroup>
   );
