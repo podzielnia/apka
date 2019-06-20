@@ -24,9 +24,9 @@ export default function QuestionView() {
 
   const onPick = (answer: Answer) => {
     if (answer.isCorrect) {
-      alert("dobrze");
+      alert("dobrze \n" + questions[questionIndex].hints[0]);
     } else {
-      alert("źle");
+      return alert("źle");
     }
 
     if (questions.length > questionIndex + 1) {
