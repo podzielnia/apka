@@ -3,11 +3,11 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { withKnobs, object } from "@storybook/addon-knobs/react";
 
-import QuestionText from "../components/QuestionText";
+import QuestionImage from "../components/QuestionImage";
 
 const testText =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam";
 
-storiesOf("QuestionText", module)
+storiesOf("QuestionImage", module)
   .addDecorator(withKnobs)
-  .add("default", () => <QuestionText text={object("text", testText)} />);
+  .add("default", () => <QuestionImage />);
