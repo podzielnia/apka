@@ -25,6 +25,7 @@
       false
     ],
     "no-trailing-whitespace": false,
+    "interface-name": false,
     "member-access": [
       true,
       "no-public"
