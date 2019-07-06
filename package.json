@@ -38,6 +38,7 @@
     ]
   },
   "devDependencies": {
+    "tslint": "^5.18.0",
     "@storybook/addon-actions": "^5.1.9",
     "@storybook/addon-knobs": "^5.1.9",
     "@storybook/addon-links": "^5.1.9",
