@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import QuestionText from "./QuestionText";
-import QuestionImage from "./QuestionImage";
-import AnswerPicker from "./AnswerPicker";
-import { Question, Answer } from "../types/Question";
+import { Answer, Question } from '../types/Question';
+import AnswerPicker from './AnswerPicker';
+import QuestionImage from './QuestionImage';
+import QuestionText from './QuestionText';
 
 interface Props {
   question: Question;

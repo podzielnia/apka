@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react';
 
-import { storiesOf } from "@storybook/react";
-import { withKnobs, object } from "@storybook/addon-knobs/react";
+import { object, withKnobs } from '@storybook/addon-knobs/react';
+import { storiesOf } from '@storybook/react';
 
-import QuestionView from "../components/QuestionView";
-import { questions } from "../questions";
-import { action } from "@storybook/addon-actions";
+import { action } from '@storybook/addon-actions';
+import QuestionView from '../components/QuestionView';
+import { questions } from '../questions';
 
 export const actions = {
-  onPick: action("onPick")
+  onPick: action('onPick'),
 };
 
-storiesOf("Question", module)
+storiesOf('Question', module)
   .addDecorator(withKnobs)
-  .add("QuestionView", () => (
-    <QuestionView question={object("question", questions[0])} {...actions} />
+  .add('QuestionView', () => (
+    <QuestionView question={object('question', questions[0])} {...actions} />
   ));
