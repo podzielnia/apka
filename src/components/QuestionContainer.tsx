@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import { lighten, withStyles } from "@material-ui/core/styles";
 
-import QuestionText from "./QuestionText";
-import QuestionImage from "./QuestionImage";
-import AnswerPicker from "./AnswerPicker";
 import { questions } from "../questions";
 import { Answer } from "../types/Question";
+import QuestionView from "./QuestionView";
 
 const BorderLinearProgress = withStyles({
   root: {
@@ -19,7 +17,7 @@ const BorderLinearProgress = withStyles({
   }
 })(LinearProgress);
 
-export default function QuestionView() {
+export default function QuestionContainer() {
   const [questionIndex, setQuestionIndex] = useState(0);
 
   const onPick = (answer: Answer) => {
@@ -36,18 +34,13 @@ export default function QuestionView() {
   };
 
   return (
-    <div>
+    <>
       <BorderLinearProgress
         variant="determinate"
         color="secondary"
         value={(questionIndex / questions.length) * 100}
       />
-      <QuestionText text={questions[questionIndex].title} />
-      <QuestionImage />
-      <AnswerPicker
-        onPick={onPick}
-        answers={questions[questionIndex].answers}
-      />
-    </div>
+      <QuestionView question={questions[questionIndex]} onPick={onPick} />
+    </>
   );
 }

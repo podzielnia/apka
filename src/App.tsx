@@ -3,8 +3,7 @@ import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import QuestionView from "./components/Question";
-
+import QuestionContainer from "./components/QuestionContainer";
 
 const App: React.FC = () => {
   return (
@@ -16,7 +15,7 @@ const App: React.FC = () => {
           </Typography>
         </Toolbar>
       </AppBar>
-      <QuestionView />
+      <QuestionContainer />
     </div>
   );
 };

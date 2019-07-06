@@ -11,9 +11,9 @@ export const actions = {
   onPick: action("onPick")
 };
 
-storiesOf("AnswerPicker", module)
+storiesOf("Question", module)
   .addDecorator(withKnobs)
-  .add("default", () => (
+  .add("AnswerPicker", () => (
     <AnswerPicker
       {...actions}
       answers={object("answers", questions[0].answers)}
