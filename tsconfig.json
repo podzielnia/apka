@@ -4,7 +4,8 @@
     "target": "es2015",
     "module": "esnext",
     "lib": [
-      "esnext"
+      "esnext",
+      "dom",
     ],
     "jsx": "preserve",
     "noEmit": true,
