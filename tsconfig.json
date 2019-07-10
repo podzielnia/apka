@@ -5,7 +5,7 @@
     "module": "esnext",
     "lib": [
       "esnext",
-      "dom",
+      "dom"
     ],
     "jsx": "preserve",
     "noEmit": true,
