@@ -3,14 +3,26 @@
     "baseUrl": "./src",
     "target": "es2015",
     "module": "esnext",
-    "lib": ["esnext"],
-    "jsx": "react",
+    "lib": [
+      "esnext"
+    ],
+    "jsx": "preserve",
     "noEmit": true,
     "strict": true,
     "moduleResolution": "node",
-    "typeRoots": ["./types", "./node_modules/@types"],
+    "typeRoots": [
+      "./types",
+      "./node_modules/@types"
+    ],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "skipLibCheck": true
-  }
+    "skipLibCheck": true,
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  },
+  "include": [
+    "src"
+  ]
 }
