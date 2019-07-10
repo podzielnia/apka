@@ -1,9 +1,10 @@
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { lighten, withStyles } from '@material-ui/core/styles';
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 
-import { questions } from '../questions';
-import { Answer } from '../types/Question';
+import { ReduxState } from 'store/reducers/rootReducer';
+import { Answer, Question } from '../types/Question';
 import QuestionView from './QuestionView';
 
 const BorderLinearProgress = withStyles({
@@ -17,7 +18,11 @@ const BorderLinearProgress = withStyles({
   },
 })(LinearProgress);
 
-export default function QuestionContainer() {
+interface Props {
+  questions: Question[];
+}
+
+export function QuestionContainer({ questions }: Props) {
   const [questionIndex, setQuestionIndex] = useState(0);
 
   const onPick = (answer: Answer) => {
@@ -44,3 +49,11 @@ export default function QuestionContainer() {
     </>
   );
 }
+
+const mapStateToProps = (state: ReduxState) => {
+  return {
+    questions: state.question.questions,
+  };
+};
+
+export default connect(mapStateToProps)(QuestionContainer);
