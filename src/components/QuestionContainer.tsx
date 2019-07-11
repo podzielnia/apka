@@ -2,6 +2,8 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import { lighten, withStyles } from '@material-ui/core/styles';
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { firestoreConnect } from 'react-redux-firebase';
+import { compose } from 'redux';
 
 import { ReduxState } from 'store/reducers/rootReducer';
 import { Answer, Question } from '../types/Question';
@@ -19,41 +21,47 @@ const BorderLinearProgress = withStyles({
 })(LinearProgress);
 
 interface Props {
-  questions: Question[];
+  questions: any;
 }
 
 export function QuestionContainer({ questions }: Props) {
   const [questionIndex, setQuestionIndex] = useState(0);
 
-  const onPick = (answer: Answer) => {
-    if (answer.isCorrect) {
-      alert('dobrze \n' + questions[questionIndex].hints[0]);
-    } else {
-      return alert('źle');
-    }
+  console.log(questions);
 
-    if (questions.length > questionIndex + 1) {
-      return setQuestionIndex(questionIndex + 1);
-    }
-    alert('to było ostatnie pytanie');
-  };
+  // const onPick = (answer: Answer) => {
+  //   if (answer.isCorrect) {
+  //     alert('dobrze \n' + questions[questionIndex].hints[0]);
+  //   } else {
+  //     return alert('źle');
+  //   }
+
+  //   if (questions.length > questionIndex + 1) {
+  //     return setQuestionIndex(questionIndex + 1);
+  //   }
+  //   alert('to było ostatnie pytanie');
+  // };
 
   return (
     <>
-      <BorderLinearProgress
+      {/* <BorderLinearProgress
         variant="determinate"
         color="secondary"
         value={(questionIndex / questions.length) * 100}
       />
-      <QuestionView question={questions[questionIndex]} onPick={onPick} />
+      <QuestionView question={questions[questionIndex]} onPick={onPick} /> */}
     </>
   );
 }
 
 const mapStateToProps = (state: ReduxState) => {
+  console.log(state);
   return {
-    questions: state.question.questions,
+    questions: state.firestore.data.questions,
   };
 };
 
-export default connect(mapStateToProps)(QuestionContainer);
+export default compose<any>(
+  connect(mapStateToProps),
+  firestoreConnect([{ collection: 'questions' }]),
+)(QuestionContainer);
