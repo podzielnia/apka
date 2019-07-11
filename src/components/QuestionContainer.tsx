@@ -21,43 +21,46 @@ const BorderLinearProgress = withStyles({
 })(LinearProgress);
 
 interface Props {
-  questions: any;
+  questions?: Question[];
 }
 
 export function QuestionContainer({ questions }: Props) {
   const [questionIndex, setQuestionIndex] = useState(0);
 
-  console.log(questions);
+  questions = questions || [];
 
-  // const onPick = (answer: Answer) => {
-  //   if (answer.isCorrect) {
-  //     alert('dobrze \n' + questions[questionIndex].hints[0]);
-  //   } else {
-  //     return alert('źle');
-  //   }
+  const onPick = (answer: Answer) => {
+    const message = answer.isCorrect ? 'dobrze' : 'źle';
+    alert(`${message} \n${answer.hint}`);
 
-  //   if (questions.length > questionIndex + 1) {
-  //     return setQuestionIndex(questionIndex + 1);
-  //   }
-  //   alert('to było ostatnie pytanie');
-  // };
+    if ([...(questions || [])].length > questionIndex + 1) {
+      setQuestionIndex(questionIndex + 1);
+      return;
+    }
+
+    alert('to było ostatnie pytanie');
+  };
 
   return (
     <>
-      {/* <BorderLinearProgress
+      <BorderLinearProgress
         variant="determinate"
         color="secondary"
         value={(questionIndex / questions.length) * 100}
       />
-      <QuestionView question={questions[questionIndex]} onPick={onPick} /> */}
+      {questions.length > 0 && (
+        <QuestionView
+          question={questions[questionIndex || 0]}
+          onPick={onPick}
+        />
+      )}
     </>
   );
 }
 
 const mapStateToProps = (state: ReduxState) => {
-  console.log(state);
   return {
-    questions: state.firestore.data.questions,
+    questions: state.firestore.ordered.questions,
   };
 };
 

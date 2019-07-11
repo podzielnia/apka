@@ -7,15 +7,17 @@ import QuestionText from './QuestionText';
 
 interface Props {
   question: Question;
-  onPick: (answer: Answer) => void;
+  onPick: (answer: Answer, question: Question) => void;
 }
 
 export default function QuestionView({ question, onPick }: Props) {
+  const onPickAnswer = (answer: Answer) => onPick(answer, question);
+
   return (
     <div>
       <QuestionText text={question.title} />
       <QuestionImage />
-      <AnswerPicker onPick={onPick} answers={question.answers} />
+      <AnswerPicker onPick={onPickAnswer} answers={question.answers} />
     </div>
   );
 }

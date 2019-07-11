@@ -7,16 +7,23 @@ import { action } from '@storybook/addon-actions';
 import QuestionView from '../components/QuestionView';
 
 export const question = {
-  id: 0,
+  id: '0',
   title: 'Planujesz wakacje..',
   answers: [
-    { text: 'Pociąg i rower, w przyrodzie', isCorrect: true },
-    { text: 'Byle jak najdalej, samolotem', isCorrect: false },
+    {
+      text: 'Pociąg i rower, w przyrodzie',
+      isCorrect: true,
+      hint:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. ',
+    },
+    {
+      text: 'Byle jak najdalej, samolotem',
+      isCorrect: false,
+      hint:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. ',
+    },
   ],
-  hints: [
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem. Etiam pellentesque aliquet tellus. ',
-    'Phasellus pharetra nulla ac diam. Quisque semper justo at risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci. Nam congue, pede vitae dapibus aliquet,',
-  ],
+  image: '',
 };
 
 export const actions = {
