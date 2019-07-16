@@ -23,6 +23,11 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -39,20 +44,22 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-knobs": "^5.1.9",
+    "@storybook/addon-links": "^5.1.9",
+    "@storybook/addons": "^5.1.9",
+    "@storybook/react": "^5.1.9",
     "@types/firebase": "^3.2.1",
     "@types/jest": "24.0.15",
     "@types/node": "12.0.8",
     "@types/react": "16.8.21",
     "@types/react-dom": "16.8.4",
     "@types/react-redux": "^7.1.1",
-    "@storybook/addon-actions": "^5.1.9",
-    "@storybook/addon-knobs": "^5.1.9",
-    "@storybook/addon-links": "^5.1.9",
-    "@storybook/addons": "^5.1.9",
-    "@storybook/react": "^5.1.9",
     "@types/storybook__addon-knobs": "^5.0.2",
     "@types/storybook__react": "^4.0.2",
+    "husky": "^3.0.0",
     "prettier": "1.18.2",
+    "pretty-quick": "^1.11.1",
     "redux-devtools-extension": "^2.13.8",
     "tslint": "^5.18.0",
     "tslint-config-prettier": "^1.18.0",
