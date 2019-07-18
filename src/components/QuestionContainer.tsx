@@ -1,5 +1,6 @@
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { lighten, withStyles } from '@material-ui/core/styles';
+import { string } from 'prop-types';
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
@@ -8,6 +9,7 @@ import { compose } from 'redux';
 import { ReduxState } from 'store/reducers/rootReducer';
 import { Answer, Question } from '../types/Question';
 import QuestionView from './QuestionView';
+
 
 const BorderLinearProgress = withStyles({
   root: {
@@ -26,19 +28,26 @@ interface Props {
 
 export function QuestionContainer({ questions }: Props) {
   const [questionIndex, setQuestionIndex] = useState(0);
+  const [toggleModal, setToggleModal] = useState(false);
+  const [message, setMessage] = useState('');
+  const [hint, setHint] = useState('');
+  const [answerNumber, setAnswerNumber] = useState(0);
+
+  const closeModal = () => setToggleModal(false); 
 
   questions = questions || [];
 
   const onPick = (answer: Answer) => {
-    const message = answer.isCorrect ? 'dobrze' : 'źle';
-    alert(`${message} \n${answer.hint}`);
+    setToggleModal(true);
+    setMessage(answer.isCorrect ? 'Dobra odpowiedź!' : 'Zła odpowiedź!');
+    setHint(answer.hint);
+    setAnswerNumber(questionIndex + 1);
 
     if ([...(questions || [])].length > questionIndex + 1) {
       setQuestionIndex(questionIndex + 1);
       return;
     }
-
-    alert('to było ostatnie pytanie');
+    // alert('to było ostatnie pytanie');
   };
 
   return (
@@ -52,6 +61,11 @@ export function QuestionContainer({ questions }: Props) {
         <QuestionView
           question={questions[questionIndex || 0]}
           onPick={onPick}
+          toggleModal={toggleModal}
+          closeModal={closeModal}
+          message={message}
+          hint={hint}
+          answerNumber={answerNumber}
         />
       )}
     </>
