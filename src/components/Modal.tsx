@@ -90,6 +90,9 @@ interface Props {
 }
 
 export default function Modal( {toggleModal, closeModal, message , hint, answerNumber, questionsLength}: Props ) {
+ 
+  const btnNextQuestion = 'NASTĘPNE PYTANIE';
+  const btnLastQuestion = 'PRZEJDŹ DO POSUMOWANIA';
 
   return (
     <div>
@@ -107,8 +110,8 @@ export default function Modal( {toggleModal, closeModal, message , hint, answerN
           </Typography>
         </DialogContent>
         <DialogActions>
-          <StyledButton variant="contained" color="primary">
-            NASTĘPNE PYTANIE
+          <StyledButton variant="contained" color="primary" onClick={closeModal}>
+            {answerNumber === questionsLength ? btnLastQuestion : btnNextQuestion}
           </StyledButton>
         </DialogActions>
         <Typography gutterBottom align="center">

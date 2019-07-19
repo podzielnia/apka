@@ -48,7 +48,6 @@ export function QuestionContainer({ questions }: Props) {
       return;
 
     }
-    // alert('to było ostatnie pytanie');
   };
 
   return (
