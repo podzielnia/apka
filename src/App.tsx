@@ -1,23 +1,33 @@
-import React from "react";
+import React from 'react';
+import { Provider } from 'react-redux';
+import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
+import { createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { createFirestoreInstance, reduxFirestore } from 'redux-firestore';
 
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import QuestionView from "./components/Question";
+import firebaseConfig from '../src/config/firebase';
+import Main from './components/Main';
+import rootReducer from './store/reducers/rootReducer';
 
+const store = createStore(
+  rootReducer,
+  composeWithDevTools({})(reduxFirestore(firebaseConfig)),
+);
+
+const rrfProps = {
+  firebase: firebaseConfig,
+  config: { userProfile: 'users' },
+  dispatch: store.dispatch,
+  createFirestoreInstance,
+};
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <AppBar position="static" color="default">
-        <Toolbar>
-          <Typography variant="h6" color="inherit">
-            Podzielnia
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <QuestionView />
-    </div>
+    <Provider store={store}>
+      <ReactReduxFirebaseProvider {...rrfProps}>
+        <Main />
+      </ReactReduxFirebaseProvider>
+    </Provider>
   );
 };
 
