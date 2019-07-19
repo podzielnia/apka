@@ -46,8 +46,7 @@ export function QuestionContainer({ questions }: Props) {
     if ([...(questions || [])].length > questionIndex + 1) {
       setQuestionIndex(questionIndex + 1);
       return;
-
-    }
+    } 
   };
 
   return (
