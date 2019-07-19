@@ -34,6 +34,7 @@ export const actions = {
   message: '',
   hint: '',
   answerNumber: 0,
+  questionsLength: 0,
 };
 
 storiesOf('Question', module)

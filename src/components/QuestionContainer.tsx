@@ -32,7 +32,7 @@ export function QuestionContainer({ questions }: Props) {
   const [message, setMessage] = useState('');
   const [hint, setHint] = useState('');
   const [answerNumber, setAnswerNumber] = useState(0);
-
+  const questionsLength = ([...(questions || [])]).length;
   const closeModal = () => setToggleModal(false); 
 
   questions = questions || [];
@@ -46,6 +46,7 @@ export function QuestionContainer({ questions }: Props) {
     if ([...(questions || [])].length > questionIndex + 1) {
       setQuestionIndex(questionIndex + 1);
       return;
+
     }
     // alert('to było ostatnie pytanie');
   };
@@ -66,6 +67,7 @@ export function QuestionContainer({ questions }: Props) {
           message={message}
           hint={hint}
           answerNumber={answerNumber}
+          questionsLength={questionsLength}
         />
       )}
     </>

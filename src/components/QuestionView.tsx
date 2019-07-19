@@ -14,9 +14,10 @@ interface Props {
   message: string;
   hint: string;
   answerNumber: number;
+  questionsLength: number;
 }
 
-export default function QuestionView({ question, onPick, toggleModal, closeModal, message, hint, answerNumber }: Props) {
+export default function QuestionView({ question, onPick, toggleModal, closeModal, message, hint, answerNumber, questionsLength }: Props) {
 
   const onPickAnswer = (answer: Answer) => onPick(answer, question);
   
@@ -37,6 +38,7 @@ export default function QuestionView({ question, onPick, toggleModal, closeModal
         message={message}
         hint={hint}
         answerNumber={answerNumber}
+        questionsLength={questionsLength}
       />
     </div>
   );

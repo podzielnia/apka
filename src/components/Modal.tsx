@@ -86,9 +86,10 @@ interface Props {
   message: string;
   hint: string;
   answerNumber: number;
+  questionsLength: number;
 }
 
-function Modal( {toggleModal, closeModal, message , hint, answerNumber}: Props ) {
+export default function Modal( {toggleModal, closeModal, message , hint, answerNumber, questionsLength}: Props ) {
 
   return (
     <div>
@@ -111,11 +112,10 @@ function Modal( {toggleModal, closeModal, message , hint, answerNumber}: Props )
           </StyledButton>
         </DialogActions>
         <Typography gutterBottom align="center">
-            Ukończono {answerNumber}/10
+            Ukończono {answerNumber}/{questionsLength}
           </Typography>
       </CompleteDialog>
     </div>
   );
 }
 
-export default Modal;
