@@ -27,17 +27,17 @@ interface Props {
 
 export function QuestionContainer({ questions }: Props) {
   const [questionIndex, setQuestionIndex] = useState(0);
-  const [toggleModal, setToggleModal] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
   const [message, setMessage] = useState('');
   const [hint, setHint] = useState('');
   const [answerNumber, setAnswerNumber] = useState(0);
   const questionsLength = ([...(questions || [])]).length;
-  const closeModal = () => setToggleModal(false);
+  const closeModal = () => setModalVisible(false);
 
   questions = questions || [];
 
   const onPick = (answer: Answer) => {
-    setToggleModal(true);
+    setModalVisible(true);
     setMessage(answer.isCorrect ? 'Dobra odpowiedź!' : 'Zła odpowiedź!');
     setHint(answer.hint);
     setAnswerNumber(questionIndex + 1);
@@ -59,7 +59,7 @@ export function QuestionContainer({ questions }: Props) {
         <QuestionView
           question={questions[questionIndex || 0]}
           onPick={onPick}
-          toggleModal={toggleModal}
+          modalVisible={modalVisible}
           closeModal={closeModal}
           message={message}
           hint={hint}

@@ -19,11 +19,11 @@ const styles = (theme: Theme) =>
 export interface DialogTitleProps extends WithStyles<typeof styles> {
   id: string;
   children: React.ReactNode;
-  onClose: () => void;
+  closeModal: () => void;
 }
 
 const DialogTitle = withStyles(styles)((props: DialogTitleProps) => {
-  const { children, classes, onClose } = props;
+  const { children, classes } = props;
   return (
     <MuiDialogTitle disableTypography className={classes.root}>
       <Typography variant="h6" align="center">{children}</Typography>
@@ -59,21 +59,21 @@ const StyledButton = withStyles({
     background: '#009688',
     '&:hover': {
       backgroundColor: '#009688',
-    }  
+    }
   }
 })(Button);
 
 interface Props {
-  toggleModal: boolean;
-  closeModal: any;
+  modalVisible: boolean;
+  closeModal: () => void;
   message: string;
   hint: string;
   answerNumber: number;
   questionsLength: number;
 }
 
-export default function Modal( {toggleModal, closeModal, message , hint, answerNumber, questionsLength}: Props ) {
- 
+export default function Modal( {modalVisible, closeModal, message , hint, answerNumber, questionsLength}: Props ) {
+
   const btnNextQuestion = 'NASTĘPNE PYTANIE';
   const btnLastQuestion = 'PRZEJDŹ DO POSUMOWANIA';
 
@@ -81,9 +81,9 @@ export default function Modal( {toggleModal, closeModal, message , hint, answerN
     <div>
       <CompleteDialog
         aria-labelledby="customized-dialog-title"
-        open={toggleModal}
+        open={modalVisible}
       >
-        <DialogTitle id="customized-dialog-title" onClose={closeModal}>
+        <DialogTitle id="customized-dialog-title" closeModal={closeModal}>
           {message}
         </DialogTitle>
         <DialogContent>

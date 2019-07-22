@@ -28,8 +28,8 @@ export const question = {
 
 export const actions = {
   onPick: action('onPick'),
-  toggleModal: false,
-  closeModal: null,
+  modalVisible: false,
+  closeModal: () => null,
   message: '',
   hint: '',
   answerNumber: 0,
