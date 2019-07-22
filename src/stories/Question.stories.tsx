@@ -28,12 +28,6 @@ export const question = {
 
 export const actions = {
   onPick: action('onPick'),
-  modalVisible: false,
-  closeModal: () => null,
-  message: '',
-  hint: '',
-  answerNumber: 0,
-  questionsLength: 0,
 };
 
 storiesOf('Question', module)

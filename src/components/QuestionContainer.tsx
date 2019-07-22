@@ -7,6 +7,7 @@ import { compose } from 'redux';
 
 import { ReduxState } from 'store/reducers/rootReducer';
 import { Answer, Question } from '../types/Question';
+import Modal from './Modal';
 import QuestionView from './QuestionView';
 
 
@@ -48,6 +49,9 @@ export function QuestionContainer({ questions }: Props) {
     }
   };
 
+  const onCloseModal = closeModal;
+  const onModalVisible = modalVisible;
+
   return (
     <>
       <BorderLinearProgress
@@ -56,16 +60,20 @@ export function QuestionContainer({ questions }: Props) {
         value={(questionIndex / questions.length) * 100}
       />
       {questions.length > 0 && (
-        <QuestionView
-          question={questions[questionIndex || 0]}
-          onPick={onPick}
-          modalVisible={modalVisible}
-          closeModal={closeModal}
-          message={message}
-          hint={hint}
-          answerNumber={answerNumber}
-          questionsLength={questionsLength}
-        />
+        <React.Fragment>
+          <QuestionView
+            question={questions[questionIndex || 0]}
+            onPick={onPick}
+          />
+          <Modal
+            modalVisible={onModalVisible}
+            closeModal={onCloseModal}
+            message={message}
+            hint={hint}
+            answerNumber={answerNumber}
+            questionsLength={questionsLength}
+          />
+        </React.Fragment>
       )}
     </>
   );

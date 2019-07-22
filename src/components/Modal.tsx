@@ -74,6 +74,7 @@ interface Props {
 
 export default function Modal( {modalVisible, closeModal, message , hint, answerNumber, questionsLength}: Props ) {
 
+
   const btnNextQuestion = 'NASTĘPNE PYTANIE';
   const btnLastQuestion = 'PRZEJDŹ DO POSUMOWANIA';
 
