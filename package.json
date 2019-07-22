@@ -5,7 +5,6 @@
   "dependencies": {
     "@material-ui/core": "^4.1.1",
     "@material-ui/icons": "^4.2.0",
-    "@material-ui/system": "^4.3.0",
     "firestore": "^1.1.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
