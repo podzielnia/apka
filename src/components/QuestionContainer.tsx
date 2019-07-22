@@ -1,6 +1,5 @@
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { lighten, withStyles } from '@material-ui/core/styles';
-import { string } from 'prop-types';
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
@@ -33,7 +32,7 @@ export function QuestionContainer({ questions }: Props) {
   const [hint, setHint] = useState('');
   const [answerNumber, setAnswerNumber] = useState(0);
   const questionsLength = ([...(questions || [])]).length;
-  const closeModal = () => setToggleModal(false); 
+  const closeModal = () => setToggleModal(false);
 
   questions = questions || [];
 
@@ -46,7 +45,7 @@ export function QuestionContainer({ questions }: Props) {
     if ([...(questions || [])].length > questionIndex + 1) {
       setQuestionIndex(questionIndex + 1);
       return;
-    } 
+    }
   };
 
   return (

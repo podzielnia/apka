@@ -1,11 +1,10 @@
 import React from 'react';
 
-import { object, withKnobs, number } from '@storybook/addon-knobs/react';
+import { object, withKnobs } from '@storybook/addon-knobs/react';
 import { storiesOf } from '@storybook/react';
 
 import { action } from '@storybook/addon-actions';
 import QuestionView from '../components/QuestionView';
-import { any } from 'prop-types';
 
 export const question = {
   id: '0',
