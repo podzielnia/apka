@@ -7,7 +7,9 @@ import { compose } from 'redux';
 
 import { ReduxState } from 'store/reducers/rootReducer';
 import { Answer, Question } from '../types/Question';
+import Modal from './Modal';
 import QuestionView from './QuestionView';
+
 
 const BorderLinearProgress = withStyles({
   root: {
@@ -26,20 +28,29 @@ interface Props {
 
 export function QuestionContainer({ questions }: Props) {
   const [questionIndex, setQuestionIndex] = useState(0);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [message, setMessage] = useState('');
+  const [hint, setHint] = useState('');
+  const [answerNumber, setAnswerNumber] = useState(0);
+  const questionsLength = ([...(questions || [])]).length;
+  const closeModal = () => setModalVisible(false);
 
   questions = questions || [];
 
   const onPick = (answer: Answer) => {
-    const message = answer.isCorrect ? 'dobrze' : 'źle';
-    alert(`${message} \n${answer.hint}`);
+    setModalVisible(true);
+    setMessage(answer.isCorrect ? 'Dobra odpowiedź!' : 'Zła odpowiedź!');
+    setHint(answer.hint);
+    setAnswerNumber(questionIndex + 1);
 
     if ([...(questions || [])].length > questionIndex + 1) {
       setQuestionIndex(questionIndex + 1);
       return;
     }
-
-    alert('to było ostatnie pytanie');
   };
+
+  const onCloseModal = closeModal;
+  const onModalVisible = modalVisible;
 
   return (
     <>
@@ -49,10 +60,20 @@ export function QuestionContainer({ questions }: Props) {
         value={(questionIndex / questions.length) * 100}
       />
       {questions.length > 0 && (
-        <QuestionView
-          question={questions[questionIndex || 0]}
-          onPick={onPick}
-        />
+        <React.Fragment>
+          <QuestionView
+            question={questions[questionIndex || 0]}
+            onPick={onPick}
+          />
+          <Modal
+            modalVisible={onModalVisible}
+            closeModal={onCloseModal}
+            message={message}
+            hint={hint}
+            answerNumber={answerNumber}
+            questionsLength={questionsLength}
+          />
+        </React.Fragment>
       )}
     </>
   );

@@ -11,13 +11,17 @@ interface Props {
 }
 
 export default function QuestionView({ question, onPick }: Props) {
+
   const onPickAnswer = (answer: Answer) => onPick(answer, question);
 
   return (
     <div>
       <QuestionText text={question.title} />
       <QuestionImage />
-      <AnswerPicker onPick={onPickAnswer} answers={question.answers} />
+      <AnswerPicker
+        onPick={onPickAnswer}
+        answers={question.answers}
+      />
     </div>
   );
 }
