@@ -1,21 +1,37 @@
 import React from 'react';
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import About from './About';
 import QuestionContainer from './QuestionContainer';
+
+const SplashScreen = () => {
+  return (
+    <div>
+      <h2>PODZIELNIA LOGO</h2>
+      <button>
+        <Link to={'/quiz'}>Nowa gra</Link>
+      </button>
+      <button>
+        <Link to={'/about'}>O projekcie</Link>
+      </button>
+    </div>
+  );
+};
+
+const Routes = () => {
+  return (
+    <Router>
+      <Route exact path="/" component={SplashScreen} />
+      <Route path="/quiz" component={QuestionContainer} />
+      <Route path="/about" component={About} />
+    </Router>
+  );
+};
 
 const Main = () => {
   return (
     <div className="App">
-      <AppBar position="static" color="default">
-        <Toolbar>
-          <Typography variant="h6" color="inherit">
-            Podzielnia
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <QuestionContainer />
+      <Routes />
     </div>
   );
 };
