@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
 import About from './About';
 import QuestionContainer from './QuestionContainer';
+import Summary from './Summary';
 
 const SplashScreen = () => {
   return (
@@ -24,6 +25,7 @@ const Routes = () => {
       <Route exact path="/" component={SplashScreen} />
       <Route path="/quiz" component={QuestionContainer} />
       <Route path="/about" component={About} />
+      <Route path="/summary" component={Summary} />
     </Router>
   );
 };
