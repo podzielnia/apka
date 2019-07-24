@@ -4,8 +4,7 @@ import Bar from './Bar';
 export default function About() {
   return (
     <>
-      <Bar />
-      <h4>O PROJEKCIE</h4>
+      <Bar>O PROJEKCIE</Bar>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda,
         repudiandae! Vel, aperiam debitis officia officiis quam laborum. Quod

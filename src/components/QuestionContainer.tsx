@@ -55,7 +55,7 @@ export function QuestionContainer({ questions }: Props) {
 
   return (
     <>
-      <Bar />
+      <Bar>QUIZ</Bar>
       <BorderLinearProgress
         variant="determinate"
         color="secondary"

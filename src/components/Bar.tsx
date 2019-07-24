@@ -13,7 +13,11 @@ const ArrowSvgIcon = withStyles({
   },
 })(SvgIcon);
 
-export default function Bar() {
+interface Props {
+  children: string;
+}
+
+export default function Bar({ children }: Props) {
   return (
     <>
       <AppBar position="static" color="default">
@@ -24,7 +28,7 @@ export default function Bar() {
             </ArrowSvgIcon>
           </Link>
           <Typography variant="h6" color="inherit">
-            QUIZ
+            {children}
           </Typography>
         </Toolbar>
       </AppBar>
