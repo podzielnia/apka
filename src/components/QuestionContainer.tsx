@@ -21,16 +21,21 @@ interface Props {
   question: Question;
   questionNumber: number;
   questionsTotalNumber: number;
+  onAnswerPick: () => void;
 }
 
 export default function QuestionContainer({
   question,
   questionNumber,
   questionsTotalNumber,
+  onAnswerPick,
 }: Props) {
   const [modalVisible, setModalVisible] = useState(false);
   const [chosenAnswer, setChosenAnswer] = useState({} as Answer);
-  const closeModal = () => setModalVisible(false);
+  const closeModal = () => {
+    setModalVisible(false);
+    onAnswerPick();
+  };
   const getMessage = () =>
     chosenAnswer.isCorrect ? 'Dobra odpowiedź!' : 'Zła odpowiedź!';
 
