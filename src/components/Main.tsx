@@ -3,7 +3,7 @@ import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import QuestionContainer from './QuestionContainer';
+import Quiz from './Quiz';
 
 const Main = () => {
   return (
@@ -15,7 +15,7 @@ const Main = () => {
           </Typography>
         </Toolbar>
       </AppBar>
-      <QuestionContainer />
+      <Quiz />
     </div>
   );
 };
