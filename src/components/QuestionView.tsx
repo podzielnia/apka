@@ -11,9 +11,9 @@ interface Props {
 }
 
 export default ({ question, onPickAnswer }: Props) => (
-  <div>
+  <>
     <QuestionText text={question.title} />
     <QuestionImage />
     <AnswerPicker onPick={onPickAnswer} answers={question.answers} />
-  </div>
+  </>
 );

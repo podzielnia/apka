@@ -51,14 +51,12 @@ export class Quiz extends PureComponent<Props, State> {
     const question = this.getCurrentQuestion();
 
     return question ? (
-      <>
-        <QuestionContainer
-          question={question}
-          questionNumber={this.state.currentQuestionIndex + 1}
-          questionsTotalNumber={this.state.questionsPool.length}
-          onAnswerPick={this.nextQuestion}
-        />
-      </>
+      <QuestionContainer
+        question={question}
+        questionNumber={this.state.currentQuestionIndex + 1}
+        questionsTotalNumber={this.state.questionsPool.length}
+        onAnswerPick={this.nextQuestion}
+      />
     ) : (
       <Loading />
     );
