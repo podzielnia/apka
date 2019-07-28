@@ -5,6 +5,7 @@ import { compose } from 'redux';
 
 import { ReduxState } from 'store/reducers/rootReducer';
 import { Question } from '../types/Question';
+import Loading from './Loading';
 import QuestionContainer from './QuestionContainer';
 
 interface Props {
@@ -59,7 +60,7 @@ export class Quiz extends PureComponent<Props, State> {
         />
       </>
     ) : (
-      <>LOADING QUESTION</>
+      <Loading />
     );
   }
 }
