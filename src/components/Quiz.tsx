@@ -8,6 +8,29 @@ import { Question } from '../types/Question';
 import Loading from './Loading';
 import QuestionContainer from './QuestionContainer';
 
+function shuffle<T>(array: T[]): T[] {
+  let currentIndex = array.length;
+  let temporaryValue;
+  let randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+const getRandomQuestionsPool = (questions: Question[]): Question[] =>
+  shuffle<Question>([...questions]).slice(0, 9);
+
 interface Props {
   questions?: Question[];
 }
@@ -26,7 +49,7 @@ export class Quiz extends PureComponent<Props, State> {
   componentDidUpdate(previousProps: Props) {
     if (!previousProps.questions && this.props.questions) {
       this.setState({
-        questionsPool: this.props.questions.slice(0, 9),
+        questionsPool: getRandomQuestionsPool(this.props.questions),
         currentQuestionIndex: 0,
       });
     }
