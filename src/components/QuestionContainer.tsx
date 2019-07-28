@@ -51,7 +51,7 @@ export default function QuestionContainer({
         color="secondary"
         value={(questionNumber / questionsTotalNumber) * 100}
       />
-      <QuestionView question={question} onPick={onPick} />
+      <QuestionView question={question} onPickAnswer={onPick} />
       <Modal
         modalVisible={modalVisible}
         closeModal={closeModal}

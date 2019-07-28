@@ -9,14 +9,12 @@ interface Props {
   onPick: (answer: Answer) => void;
 }
 
-export default function AnswerPicker({ answers, onPick }: Props) {
-  return (
-    <ButtonGroup fullWidth variant="contained">
-      {answers.map(answer => (
-        <Button key={answer.text} onClick={() => onPick(answer)}>
-          {answer.text}
-        </Button>
-      ))}
-    </ButtonGroup>
-  );
-}
+export default ({ answers, onPick }: Props) => (
+  <ButtonGroup fullWidth variant="contained">
+    {answers.map(answer => (
+      <Button key={answer.text} onClick={() => onPick(answer)}>
+        {answer.text}
+      </Button>
+    ))}
+  </ButtonGroup>
+);
