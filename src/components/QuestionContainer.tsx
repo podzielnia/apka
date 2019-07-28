@@ -1,8 +1,10 @@
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { lighten, withStyles } from '@material-ui/core/styles';
+
 import React, { useState } from 'react';
 
 import { Answer, Question } from '../types/Question';
+import Bar from './Bar';
 import Modal from './Modal';
 import QuestionView from './QuestionView';
 
@@ -46,6 +48,7 @@ export default function QuestionContainer({
 
   return (
     <>
+      <Bar>QUIZ</Bar>
       <BorderLinearProgress
         variant="determinate"
         color="secondary"

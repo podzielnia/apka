@@ -46,8 +46,8 @@ export class Quiz extends PureComponent<Props, State> {
     questionsPool: [],
   };
 
-  componentDidUpdate(previousProps: Props) {
-    if (!previousProps.questions && this.props.questions) {
+  componentDidUpdate() {
+    if (this.state.questionsPool.length < 1 && this.props.questions) {
       this.setState({
         questionsPool: getRandomQuestionsPool(this.props.questions),
         currentQuestionIndex: 0,
