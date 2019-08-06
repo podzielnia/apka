@@ -1,5 +1,6 @@
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { lighten, withStyles } from '@material-ui/core/styles';
+
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
@@ -7,9 +8,9 @@ import { compose } from 'redux';
 
 import { ReduxState } from 'store/reducers/rootReducer';
 import { Answer, Question } from '../types/Question';
+import Bar from './Bar';
 import Modal from './Modal';
 import QuestionView from './QuestionView';
-
 
 const BorderLinearProgress = withStyles({
   root: {
@@ -32,7 +33,7 @@ export function QuestionContainer({ questions }: Props) {
   const [message, setMessage] = useState('');
   const [hint, setHint] = useState('');
   const [answerNumber, setAnswerNumber] = useState(0);
-  const questionsLength = ([...(questions || [])]).length;
+  const questionsLength = [...(questions || [])].length;
   const closeModal = () => setModalVisible(false);
 
   questions = questions || [];
@@ -54,6 +55,7 @@ export function QuestionContainer({ questions }: Props) {
 
   return (
     <>
+      <Bar>QUIZ</Bar>
       <BorderLinearProgress
         variant="determinate"
         color="secondary"
