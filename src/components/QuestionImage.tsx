@@ -15,14 +15,17 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default function AnswerPicker() {
+const defaultImage =
+  'https://images.unsplash.com/photo-1560945927-9cec08c705cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2851&q=80';
+
+interface Props {
+  image?: string;
+}
+
+export default function AnswerPicker({ image }: Props) {
   const classes = useStyles();
 
   return (
-    <img
-      className={classes.img}
-      alt="complex"
-      src="https://images.unsplash.com/photo-1560945927-9cec08c705cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2851&q=80"
-    />
+    <img className={classes.img} alt="complex" src={image || defaultImage} />
   );
 }
