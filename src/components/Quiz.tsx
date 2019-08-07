@@ -1,32 +1,13 @@
-import React, { PureComponent } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 
 import { ReduxState } from 'store/reducers/rootReducer';
+import { shuffle } from 'utils';
 import { Question } from '../types/Question';
 import Loading from './Loading';
 import QuestionContainer from './QuestionContainer';
-
-function shuffle<T>(array: T[]): T[] {
-  let currentIndex = array.length;
-  let temporaryValue;
-  let randomIndex;
-
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-
-  return array;
-}
 
 const getRandomQuestionsPool = (questions: Question[]): Question[] =>
   shuffle<Question>([...questions]).slice(0, 9);
@@ -35,28 +16,17 @@ interface Props {
   questions?: Question[];
 }
 
-interface State {
-  currentQuestionIndex: number;
-  questionsPool: Question[];
-}
+export const Quiz = ({ questions }: Props) => {
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [questionsPool, setQuestionsPool] = useState([] as Question[]);
 
-export class Quiz extends PureComponent<Props, State> {
-  state: State = {
-    currentQuestionIndex: 0,
-    questionsPool: [],
-  };
-
-  componentDidUpdate() {
-    if (this.state.questionsPool.length < 1 && this.props.questions) {
-      this.setState({
-        questionsPool: getRandomQuestionsPool(this.props.questions),
-        currentQuestionIndex: 0,
-      });
+  useEffect(() => {
+    if (questionsPool.length < 1 && questions) {
+      setQuestionsPool(getRandomQuestionsPool(questions));
     }
-  }
+  }, [questionsPool.length, questions]);
 
-  getCurrentQuestion = (): Question | null => {
-    const { questionsPool, currentQuestionIndex } = this.state;
+  const getCurrentQuestion = (): Question | null => {
     if (!questionsPool) {
       return null;
     }
@@ -64,26 +34,23 @@ export class Quiz extends PureComponent<Props, State> {
     return questionsPool[currentQuestionIndex];
   };
 
-  goToNextQuestion = () => {
-    const currentQuestionIndex = this.state.currentQuestionIndex + 1;
-    this.setState({ currentQuestionIndex });
+  const goToNextQuestion = () => {
+    setCurrentQuestionIndex(currentQuestionIndex + 1);
   };
 
-  render() {
-    const question = this.getCurrentQuestion();
+  const question = getCurrentQuestion();
 
-    return question ? (
-      <QuestionContainer
-        question={question}
-        questionNumber={this.state.currentQuestionIndex + 1}
-        questionsTotalNumber={this.state.questionsPool.length}
-        onAnswerPick={this.goToNextQuestion}
-      />
-    ) : (
-      <Loading />
-    );
-  }
-}
+  return question ? (
+    <QuestionContainer
+      question={question}
+      questionNumber={currentQuestionIndex + 1}
+      questionsTotalNumber={questionsPool.length}
+      onAnswerPick={goToNextQuestion}
+    />
+  ) : (
+    <Loading />
+  );
+};
 
 const mapStateToProps = (state: ReduxState) => {
   return {
