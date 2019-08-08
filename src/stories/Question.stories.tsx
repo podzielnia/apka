@@ -27,7 +27,7 @@ export const question = {
 };
 
 export const actions = {
-  onPick: action('onPick'),
+  onPickAnswer: action('onPickAnswer'),
 };
 
 storiesOf('Question', module)
