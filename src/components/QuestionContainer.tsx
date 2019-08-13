@@ -2,11 +2,7 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import { lighten, withStyles } from '@material-ui/core/styles';
 
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { firestoreConnect } from 'react-redux-firebase';
-import { compose } from 'redux';
 
-import { ReduxState } from 'store/reducers/rootReducer';
 import { Answer, Question } from '../types/Question';
 import Bar from './Bar';
 import Modal from './Modal';
@@ -24,34 +20,31 @@ const BorderLinearProgress = withStyles({
 })(LinearProgress);
 
 interface Props {
-  questions?: Question[];
+  question: Question;
+  questionNumber: number;
+  questionsTotalNumber: number;
+  onAnswerPick: () => void;
 }
 
-export function QuestionContainer({ questions }: Props) {
-  const [questionIndex, setQuestionIndex] = useState(0);
+export default function QuestionContainer({
+  question,
+  questionNumber,
+  questionsTotalNumber,
+  onAnswerPick,
+}: Props) {
   const [modalVisible, setModalVisible] = useState(false);
-  const [message, setMessage] = useState('');
-  const [hint, setHint] = useState('');
-  const [answerNumber, setAnswerNumber] = useState(0);
-  const questionsLength = [...(questions || [])].length;
-  const closeModal = () => setModalVisible(false);
-
-  questions = questions || [];
+  const [chosenAnswer, setChosenAnswer] = useState({} as Answer);
+  const closeModal = () => {
+    setModalVisible(false);
+    onAnswerPick();
+  };
+  const getMessage = () =>
+    chosenAnswer.isCorrect ? 'Dobra odpowiedź!' : 'Zła odpowiedź!';
 
   const onPick = (answer: Answer) => {
     setModalVisible(true);
-    setMessage(answer.isCorrect ? 'Dobra odpowiedź!' : 'Zła odpowiedź!');
-    setHint(answer.hint);
-    setAnswerNumber(questionIndex + 1);
-
-    if ([...(questions || [])].length > questionIndex + 1) {
-      setQuestionIndex(questionIndex + 1);
-      return;
-    }
+    setChosenAnswer(answer);
   };
-
-  const onCloseModal = closeModal;
-  const onModalVisible = modalVisible;
 
   return (
     <>
@@ -59,35 +52,17 @@ export function QuestionContainer({ questions }: Props) {
       <BorderLinearProgress
         variant="determinate"
         color="secondary"
-        value={(questionIndex / questions.length) * 100}
+        value={(questionNumber / questionsTotalNumber) * 100}
       />
-      {questions.length > 0 && (
-        <React.Fragment>
-          <QuestionView
-            question={questions[questionIndex || 0]}
-            onPick={onPick}
-          />
-          <Modal
-            modalVisible={onModalVisible}
-            closeModal={onCloseModal}
-            message={message}
-            hint={hint}
-            answerNumber={answerNumber}
-            questionsLength={questionsLength}
-          />
-        </React.Fragment>
-      )}
+      <QuestionView question={question} onPickAnswer={onPick} />
+      <Modal
+        modalVisible={modalVisible}
+        closeModal={closeModal}
+        message={getMessage()}
+        hint={chosenAnswer.hint}
+        answerNumber={questionNumber}
+        questionsLength={questionsTotalNumber}
+      />
     </>
   );
 }
-
-const mapStateToProps = (state: ReduxState) => {
-  return {
-    questions: state.firestore.ordered.questions,
-  };
-};
-
-export default compose<any>(
-  connect(mapStateToProps),
-  firestoreConnect([{ collection: 'questions' }]),
-)(QuestionContainer);
