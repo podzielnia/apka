@@ -13,7 +13,7 @@ interface Props {
 export default ({ question, onPickAnswer }: Props) => (
   <>
     <QuestionText text={question.title} />
-    <QuestionImage />
+    <QuestionImage image={question.image} />
     <AnswerPicker onPick={onPickAnswer} answers={question.answers} />
   </>
 );
