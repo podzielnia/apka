@@ -1,14 +1,31 @@
+import Container from '@material-ui/core/Container';
+import { withStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+const OuterContainer = withStyles({
+  root: {
+    padding: '3rem',
+    textAlign: 'center',
+  },
+})(Container);
+
+const linkStyles = {
+  textDecoration: 'none',
+  color: '#009688',
+};
+
 const Page404 = () => {
   return (
-    <div>
-      <p>Strona nie została odnaleziona</p>
-      <button>
-        <Link to="/">Wróć do strony głównej</Link>
-      </button>
-    </div>
+    <OuterContainer maxWidth="sm">
+      <Typography variant="h5" style={{ margin: '2.5rem' }}>
+        Strona nie została odnaleziona
+      </Typography>
+      <Link to="/" style={linkStyles}>
+        Wróć do strony głównej
+      </Link>
+    </OuterContainer>
   );
 };
 
