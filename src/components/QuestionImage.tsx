@@ -9,8 +9,12 @@ const useStyles = makeStyles((theme: Theme) =>
     img: {
       margin: 'auto',
       display: 'block',
-      maxWidth: '100%',
-      maxHeight: '100%',
+      minWidth: '40%',
+      minHeight: '40%',
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      marginBottom: '1rem',
     },
   }),
 );

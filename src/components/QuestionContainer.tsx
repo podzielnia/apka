@@ -11,11 +11,11 @@ import QuestionView from './QuestionView';
 const BorderLinearProgress = withStyles({
   root: {
     height: 10,
-    backgroundColor: lighten('#ff6c5c', 0.5),
+    backgroundColor: lighten('#009688', 0.5),
   },
   bar: {
     borderRadius: 20,
-    backgroundColor: '#ff6c5c',
+    backgroundColor: '#009688',
   },
 })(LinearProgress);
 
@@ -51,7 +51,6 @@ export default function QuestionContainer({
       <Bar>QUIZ</Bar>
       <BorderLinearProgress
         variant="determinate"
-        color="secondary"
         value={(questionNumber / questionsTotalNumber) * 100}
       />
       <QuestionView question={question} onPickAnswer={onPick} />
