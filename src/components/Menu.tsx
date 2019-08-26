@@ -2,9 +2,9 @@ import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { routes } from './Routes';
 
 const OuterContainer = withStyles({
   root: {
@@ -57,12 +57,12 @@ export default function Menu() {
       <Typography variant="h4">PODZIELNIA LOGO</Typography>
       <InnerContainer>
         <StyledButton>
-          <Link to={'/quiz'} style={styledButtonLink}>
+          <Link to={routes.quiz} style={styledButtonLink}>
             Nowa gra
           </Link>
         </StyledButton>
         <TransparentButton>
-          <Link to={'/about'} style={transparentButtonLink}>
+          <Link to={routes.about} style={transparentButtonLink}>
             O projekcie
           </Link>
         </TransparentButton>

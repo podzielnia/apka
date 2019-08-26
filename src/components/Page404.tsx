@@ -3,6 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { routes } from './Routes';
 
 const OuterContainer = withStyles({
   root: {
@@ -22,7 +23,7 @@ const Page404 = () => {
       <Typography variant="h5" style={{ margin: '2.5rem' }}>
         Strona nie została odnaleziona
       </Typography>
-      <Link to="/" style={linkStyles}>
+      <Link to={routes.root} style={linkStyles}>
         Wróć do strony głównej
       </Link>
     </OuterContainer>
