@@ -8,6 +8,7 @@ import Quiz from './Quiz';
 import Summary from './Summary';
 
 const routes = {
+  root: '/',
   quiz: '/quiz',
   about: '/about',
   summary: '/summary',
@@ -17,7 +18,7 @@ const Routes = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={Menu} />
+        <Route exact path={routes.root} component={Menu} />
         <Route path={routes.quiz} component={Quiz} />
         <Route path={routes.about} component={About} />
         <Route path={routes.summary} component={Summary} />
@@ -28,3 +29,4 @@ const Routes = () => {
 };
 
 export default Routes;
+export { routes };

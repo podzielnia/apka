@@ -10,6 +10,8 @@ import { Link } from 'react-router-dom';
 const ArrowSvgIcon = withStyles({
   root: {
     fontSize: '3rem',
+    marginTop: '0.8rem',
+    color: '#605f5f',
   },
 })(SvgIcon);
 
@@ -27,7 +29,7 @@ export default function Bar({ children }: Props) {
               <path d="M15 8.25H5.87l4.19-4.19L9 3 3 9l6 6 1.06-1.06-4.19-4.19H15v-1.5z" />
             </ArrowSvgIcon>
           </Link>
-          <Typography variant="h6" color="inherit">
+          <Typography variant="h5" color="inherit">
             {children}
           </Typography>
         </Toolbar>

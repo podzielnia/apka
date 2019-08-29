@@ -1,9 +1,11 @@
+import { MuiThemeProvider } from '@material-ui/core/styles';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
 import { createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { createFirestoreInstance, reduxFirestore } from 'redux-firestore';
+import CustomTheme from './CustomTheme';
 
 import firebaseConfig from '../src/config/firebase';
 import Main from './components/Main';
@@ -23,11 +25,13 @@ const rrfProps = {
 
 const App: React.FC = () => {
   return (
-    <Provider store={store}>
-      <ReactReduxFirebaseProvider {...rrfProps}>
-        <Main />
-      </ReactReduxFirebaseProvider>
-    </Provider>
+    <MuiThemeProvider theme={CustomTheme}>
+      <Provider store={store}>
+        <ReactReduxFirebaseProvider {...rrfProps}>
+          <Main />
+        </ReactReduxFirebaseProvider>
+      </Provider>
+    </MuiThemeProvider>
   );
 };
 
