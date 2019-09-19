@@ -5,3 +5,7 @@ export const goodAnswer = () => ({
 export const wrongAnswer = () => ({
   type: 'WRONG_ANSWER',
 });
+
+export const resetScore = () => ({
+  type: 'RESET_SCORE',
+});

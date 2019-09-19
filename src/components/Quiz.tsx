@@ -10,7 +10,7 @@ import Loading from './Loading';
 import QuestionContainer from './QuestionContainer';
 
 const getRandomQuestionsPool = (questions: Question[]): Question[] =>
-  shuffle<Question>([...questions]).slice(0, 9);
+  shuffle<Question>([...questions]).slice(0, 10);
 
 interface Props {
   questions?: Question[];

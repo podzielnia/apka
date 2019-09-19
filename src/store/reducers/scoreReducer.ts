@@ -15,6 +15,8 @@ export const scoreReducer = (
   switch (action.type) {
     case 'GOOD_ANSWER':
       return { count: ++state.count };
+    case 'RESET_SCORE':
+      return { count: 0 };
     default:
       return state;
   }
