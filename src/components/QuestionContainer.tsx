@@ -1,8 +1,9 @@
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { lighten, withStyles } from '@material-ui/core/styles';
-
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 
+import { goodAnswer, wrongAnswer } from '../store/reducers/actions';
 import { Answer, Question } from '../types/Question';
 import Bar from './Bar';
 import Modal from './Modal';
@@ -24,13 +25,17 @@ interface Props {
   questionNumber: number;
   questionsTotalNumber: number;
   onAnswerPick: () => void;
+  goodAnswerPick: () => void;
+  wrongAnswerPick: () => void;
 }
 
-export default function QuestionContainer({
+export function QuestionContainer({
   question,
   questionNumber,
   questionsTotalNumber,
   onAnswerPick,
+  goodAnswerPick,
+  wrongAnswerPick,
 }: Props) {
   const [modalVisible, setModalVisible] = useState(false);
   const [chosenAnswer, setChosenAnswer] = useState({} as Answer);
@@ -44,6 +49,13 @@ export default function QuestionContainer({
   const onPick = (answer: Answer) => {
     setModalVisible(true);
     setChosenAnswer(answer);
+    if (answer.isCorrect) {
+      goodAnswerPick();
+      alert(1);
+    } else {
+      wrongAnswerPick();
+      alert(2);
+    }
   };
 
   return (
@@ -66,3 +78,13 @@ export default function QuestionContainer({
     </>
   );
 }
+
+const mapDispatchToProps = {
+  goodAnswerPick: goodAnswer,
+  wrongAnswerPick: wrongAnswer,
+};
+
+export default connect(
+  null,
+  mapDispatchToProps,
+)(QuestionContainer);
