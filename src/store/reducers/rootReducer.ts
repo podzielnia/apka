@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 import { firestoreReducer } from 'redux-firestore';
 
 import { Question } from 'types/Question';
-import { scoreReducer } from './scoreReducer';
+import { scoreReducer, ScoreState } from './scoreReducer';
 
 export interface QuestionsState {
   questions: Question[];
@@ -12,6 +12,7 @@ export interface QuestionsState {
 export interface ReduxState {
   question: QuestionsState;
   firestore: any;
+  score: ScoreState;
 }
 
 const rootReducer = combineReducers({

@@ -51,10 +51,8 @@ export function QuestionContainer({
     setChosenAnswer(answer);
     if (answer.isCorrect) {
       goodAnswerPick();
-      alert(1);
     } else {
       wrongAnswerPick();
-      alert(2);
     }
   };
 
