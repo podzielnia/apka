@@ -1,11 +1,11 @@
 import { AnyAction } from 'redux';
 
 export interface ScoreState {
-  score: number;
+  count: number;
 }
 
 export const initialState: ScoreState = {
-  score: 0,
+  count: 0,
 };
 
 export const scoreReducer = (
@@ -14,7 +14,7 @@ export const scoreReducer = (
 ): ScoreState => {
   switch (action.type) {
     case 'GOOD_ANSWER':
-      return { score: ++state.score };
+      return { count: ++state.count };
     default:
       return state;
   }

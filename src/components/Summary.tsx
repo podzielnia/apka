@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import { ReduxState } from 'store/reducers/rootReducer';
 
 interface Props {
-  score: number;
+  scoreCount: number;
 }
 
-export function Summary({ score }: Props) {
+export function Summary({ scoreCount }: Props) {
   return (
     <>
       <h4>Podsumowanie</h4>
@@ -15,7 +15,7 @@ export function Summary({ score }: Props) {
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda,
         repudiandae! Vel, aperiam debitis officia officiis quam laborum.
       </p>
-      Wynik: {score}/10
+      Wynik: {scoreCount}/10
       <button>UDOSTĘPNIJ NA FACEBOOKU</button>
       <button>
         <Link to="/">Wróć do strony głównej</Link>
@@ -26,7 +26,7 @@ export function Summary({ score }: Props) {
 
 const mapStateToProps = (state: ReduxState) => {
   return {
-    score: state.score.score,
+    scoreCount: state.score.count,
   };
 };
 
