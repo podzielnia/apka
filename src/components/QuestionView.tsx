@@ -1,5 +1,6 @@
+import Box from '@material-ui/core/Box';
+import { withStyles } from '@material-ui/core/styles';
 import React from 'react';
-
 import { Answer, Question } from '../types/Question';
 import AnswerPicker from './AnswerPicker';
 import QuestionImage from './QuestionImage';
@@ -10,10 +11,20 @@ interface Props {
   onPickAnswer: (answer: Answer) => void;
 }
 
+const QuestionWrapper = withStyles({
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyItems: 'space-between',
+  },
+})(Box);
+
 export default ({ question, onPickAnswer }: Props) => (
   <>
-    <QuestionText text={question.title} />
     <QuestionImage image={question.image} />
-    <AnswerPicker onPick={onPickAnswer} answers={question.answers} />
+    <QuestionWrapper>
+      <QuestionText text={question.title} />
+      <AnswerPicker onPick={onPickAnswer} answers={question.answers} />
+    </QuestionWrapper>
   </>
 );
