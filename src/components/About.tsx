@@ -11,7 +11,7 @@ const OuterContainer = withStyles({
     flexDirection: 'column',
     justifyContent: 'space-between',
     height: '100vh',
-    background: '#fff',
+    background: '#fefcfd',
   },
 })(Container);
 

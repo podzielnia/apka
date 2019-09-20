@@ -11,6 +11,7 @@ const AppInnerWrapper = withStyles({
     height: '100vh',
     padding: '0',
     background: '#dedfe8',
+    maxWidth: '37rem',
   },
 })(Container);
 
