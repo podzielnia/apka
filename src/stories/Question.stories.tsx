@@ -33,5 +33,9 @@ export const actions = {
 storiesOf('Question', module)
   .addDecorator(withKnobs)
   .add('QuestionView', () => (
-    <QuestionView question={object('question', question)} {...actions} />
+    <QuestionView
+      question={object('question', question)}
+      progress={object('progress', 50)}
+      {...actions}
+    />
   ));
