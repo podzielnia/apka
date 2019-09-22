@@ -57,14 +57,14 @@ export default function Summary() {
   return (
     <>
       <OuterContainer maxWidth="sm">
-        <Typography variant="h6">Podsumowanie</Typography>
+        <Typography variant="h6">Dzięki za udział w zabawie!</Typography>
         <Typography variant="h6" style={{ margin: '1.5rem' }}>
-          10/10
+          Twój wynik: 10/10
         </Typography>
         <Typography variant="subtitle1">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda,
-          repudiandae! Vel, aperiam debitis officia officiis quam laborum.
+          Fajnie, że zerowaste jest dla Ciebie ważne.
         </Typography>
+        <Typography variant="subtitle1">Oby tak dalej!</Typography>
         <InnerContainer>
           <StyledButton>UDOSTĘPNIJ NA FACEBOOKU</StyledButton>
           <TransparentButton>

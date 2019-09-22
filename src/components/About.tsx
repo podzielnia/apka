@@ -34,8 +34,9 @@ export default function About() {
             zazielenić!
           </Typography>
           <Typography variant="subtitle1" style={typographyStyles}>
-            Aplikacja „…..” powstała dzięki zaangażowaniu wolontariuszy
-            „Po-Dzielni”.
+            Aplikacja "Odpadometr, quiz o zero waste" powstała dzięki
+            zaangażowaniu wolontariuszy „Po-Dzielni”: Darii, Joannie, Kalinie,
+            Kubie, Monice, Paulinie i Sumo
           </Typography>
           <Typography variant="subtitle1" style={typographyStyles}>
             przy współpracy Fundacji Enea. Korzystanie z niej jest darmowe.
