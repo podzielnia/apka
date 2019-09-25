@@ -10,6 +10,7 @@ import { Answer, Question } from '../types/Question';
 import Bar from './Bar';
 import Modal from './Modal';
 import QuestionView from './QuestionView';
+import { ReduxState } from 'store/reducers/rootReducer';
 
 const QuizContainer = withStyles({
   root: {
@@ -55,6 +56,7 @@ interface Props {
   question: Question;
   questionNumber: number;
   questionsTotalNumber: number;
+  scoreCount: number;
   onAnswerPick: () => void;
   goodAnswerPick: () => void;
   wrongAnswerPick: () => void;
@@ -64,6 +66,7 @@ export function QuestionContainer({
   question,
   questionNumber,
   questionsTotalNumber,
+  scoreCount,
   onAnswerPick,
   goodAnswerPick,
   wrongAnswerPick,
@@ -96,13 +99,13 @@ export function QuestionContainer({
         <CustomButtonGroup>
           <Button classes={{ root: classes.wrong }}>
             <Typography variant="h6" style={{ marginRight: '0.5rem' }}>
-              4
+              {questionNumber - scoreCount}
             </Typography>
             <Cancel color="error" />
           </Button>
           <Button classes={{ root: classes.root }}>
             <Typography variant="h6" style={{ marginRight: '0.5rem' }}>
-              2
+              {scoreCount}
             </Typography>
             <CheckCircle />
           </Button>
@@ -130,7 +133,13 @@ const mapDispatchToProps = {
   wrongAnswerPick: wrongAnswer,
 };
 
+const mapStateToProps = (state: ReduxState) => {
+  return {
+    scoreCount: state.score.count,
+  };
+};
+
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps,
 )(QuestionContainer);
