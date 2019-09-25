@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.podzielnia-logo,
+.summary__tree {
+  object-fit: contain;
+}
+
+.menu-img {
+  height: 20rem;
+  min-height: 10rem;
+  margin: 0.5rem 0rem;
+  object-fit: contain;
+}
+
+.leaf-icon {
+  height: 2rem;
+}
+
+.summary__link {
+  text-decoration: none;
+}

@@ -7,14 +7,13 @@ const useStyles = makeStyles((theme: Theme) =>
       flexGrow: 1,
     },
     img: {
-      margin: 'auto',
+      margin: '4rem auto 1rem auto',
       display: 'block',
       minWidth: '40%',
       minHeight: '40%',
-      width: '100%',
-      height: '100%',
-      objectFit: 'cover',
-      marginBottom: '1rem',
+      maxHeight: '35rem',
+      width: '75%',
+      objectFit: 'contain',
     },
   }),
 );
