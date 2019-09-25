@@ -1,24 +1,55 @@
-import LinearProgress from '@material-ui/core/LinearProgress';
-import { lighten, withStyles } from '@material-ui/core/styles';
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-
 import { goodAnswer, wrongAnswer } from '../store/reducers/actions';
+import { Box, Button, ButtonGroup, Container } from '@material-ui/core';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import Cancel from '@material-ui/icons/Cancel';
+import CheckCircle from '@material-ui/icons/CheckCircle';
 import { Answer, Question } from '../types/Question';
 import Bar from './Bar';
 import Modal from './Modal';
 import QuestionView from './QuestionView';
 
-const BorderLinearProgress = withStyles({
+const QuizContainer = withStyles({
   root: {
-    height: 10,
-    backgroundColor: lighten('#009688', 0.5),
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    height: '100vh',
+    padding: 0,
+    background: '#fefcfd',
+    position: 'relative',
   },
-  bar: {
-    borderRadius: 20,
-    backgroundColor: '#009688',
+})(Container);
+
+const QuizInnerWrapper = withStyles({
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    height: '90vh',
+    justifyContent: 'space-around',
   },
-})(LinearProgress);
+})(Box);
+
+const CustomButtonGroup = withStyles({
+  root: {
+    position: 'absolute',
+    right: '1rem',
+    top: '5.5rem',
+    borderRadius: '10px',
+  },
+})(ButtonGroup);
+
+const useStyles = makeStyles({
+  root: {
+    color: '#7bc914',
+  },
+  wrong: {
+    color: 'red',
+  },
+});
 
 interface Props {
   question: Question;
@@ -56,23 +87,41 @@ export function QuestionContainer({
     }
   };
 
+  const classes = useStyles();
+
   return (
-    <>
+    <QuizContainer>
       <Bar>QUIZ</Bar>
-      <BorderLinearProgress
-        variant="determinate"
-        value={(questionNumber / questionsTotalNumber) * 100}
-      />
-      <QuestionView question={question} onPickAnswer={onPick} />
-      <Modal
-        modalVisible={modalVisible}
-        closeModal={closeModal}
-        message={getMessage()}
-        hint={chosenAnswer.hint}
-        answerNumber={questionNumber}
-        questionsLength={questionsTotalNumber}
-      />
-    </>
+      <QuizInnerWrapper>
+        <CustomButtonGroup>
+          <Button classes={{ root: classes.wrong }}>
+            <Typography variant="h6" style={{ marginRight: '0.5rem' }}>
+              4
+            </Typography>
+            <Cancel color="error" />
+          </Button>
+          <Button classes={{ root: classes.root }}>
+            <Typography variant="h6" style={{ marginRight: '0.5rem' }}>
+              2
+            </Typography>
+            <CheckCircle />
+          </Button>
+        </CustomButtonGroup>
+        <QuestionView
+          question={question}
+          onPickAnswer={onPick}
+          progress={(questionNumber / questionsTotalNumber) * 100}
+        />
+        <Modal
+          modalVisible={modalVisible}
+          closeModal={closeModal}
+          message={getMessage()}
+          hint={chosenAnswer.hint}
+          answerNumber={questionNumber}
+          questionsLength={questionsTotalNumber}
+        />
+      </QuizInnerWrapper>
+    </QuizContainer>
   );
 }
 

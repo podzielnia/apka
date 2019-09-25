@@ -1,18 +1,14 @@
-import { grey, teal } from '@material-ui/core/colors';
 import { createMuiTheme } from '@material-ui/core/styles';
 
 const CustomTheme = createMuiTheme({
-  palette: {
-    primary: teal,
-    secondary: grey,
-  },
   overrides: {
     MuiButton: {
       root: {
-        color: 'white',
-        backgroundColor: '#009688',
+        color: '#000',
+        backgroundColor: '#fff',
+        boxShadow: '0 1px 15px 0 rgba(0, 0, 0, 0.24)',
         '&:hover': {
-          backgroundColor: '#009688',
+          backgroundColor: '#fff',
         },
       },
     },

@@ -14,7 +14,7 @@ const OuterContainer = withStyles({
 
 const linkStyles = {
   textDecoration: 'none',
-  color: '#009688',
+  color: '#2e378d',
 };
 
 const Page404 = () => {

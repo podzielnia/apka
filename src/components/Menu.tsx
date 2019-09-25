@@ -2,6 +2,8 @@ import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import menuImg from 'assets/img-menu.png';
+import logo from 'assets/podzielnia.png';
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -10,12 +12,13 @@ import { routes } from './Routes';
 
 const OuterContainer = withStyles({
   root: {
-    padding: '3rem 2rem',
+    padding: '1rem 2rem',
     textAlign: 'center',
     height: '100vh',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
+    maxWidth: '20rem',
   },
 })(Container);
 
@@ -23,20 +26,21 @@ const InnerContainer = withStyles({
   root: {
     display: 'flex',
     flexDirection: 'column',
-    maxWidth: 'fit-content',
   },
 })(Container);
 
 const StyledButton = withStyles({
   root: {
-    marginBottom: '2rem',
+    margin: '1.5rem 0rem 1.5rem 0rem',
   },
 })(Button);
 
 const TransparentButton = withStyles({
   root: {
-    color: '#009688',
+    color: '#000',
     background: 'none',
+    border: '2px solid #fff',
+    marginBottom: '1rem',
     '&:hover': {
       background: 'none',
     },
@@ -45,12 +49,12 @@ const TransparentButton = withStyles({
 
 const styledButtonLink = {
   textDecoration: 'none',
-  color: 'white',
+  color: '#000',
 };
 
 const transparentButtonLink = {
   textDecoration: 'none',
-  color: '#009688',
+  color: '#000',
 };
 
 interface Props {
@@ -62,7 +66,13 @@ export function Menu({ resetScoreCount }: Props) {
 
   return (
     <OuterContainer>
-      <Typography variant="h4">PODZIELNIA LOGO</Typography>
+      <img src={logo} className="podzielnia-logo" />
+      <Typography variant="h6">aplikacja edukacyjna</Typography>
+      <img src={menuImg} className="menu-img" />
+      <Typography variant="subtitle2">
+        Świat zagrożony katastrofą ekologiczną ma jeszcze szansę na równowagę.
+        Sprawdź swoją wiedzę o zero waste.
+      </Typography>
       <InnerContainer>
         <StyledButton>
           <Link to={routes.quiz} style={styledButtonLink}>
@@ -75,7 +85,6 @@ export function Menu({ resetScoreCount }: Props) {
           </Link>
         </TransparentButton>
       </InnerContainer>
-      <Typography variant="subtitle2">All rights reserved</Typography>
     </OuterContainer>
   );
 }

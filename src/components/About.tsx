@@ -1,28 +1,51 @@
 import Container from '@material-ui/core/Container';
+import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
 import Bar from './Bar';
 
-const containerStyles = {
-  padding: '3rem 2rem',
+const OuterContainer = withStyles({
+  root: {
+    padding: '3rem 2rem',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    height: '100vh',
+    background: '#fefcfd',
+  },
+})(Container);
+
+const typographyStyles = {
+  marginTop: '2rem',
+  marginBottom: '2rem',
 };
 
 export default function About() {
   return (
     <>
       <Bar>O PROJEKCIE</Bar>
-      <Container style={containerStyles}>
-        <Typography variant="subtitle1">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda,
-          repudiandae! Vel, aperiam debitis officia officiis quam laborum. Quod
-          nostrum, fugit vitae eligendi sint nesciunt possimus porro,
-          voluptatibus, adipisci deleniti assumenda! Explicabo, vero? Soluta
-          quam enim, dicta dolores quaerat velit atque amet voluptates commodi
-          voluptatum perspiciatis eveniet molestiae accusamus totam. Accusamus
-          veritatis aliquam maxime asperiores dicta sunt accusantium fugit
-          aspernatur quam.
+      <OuterContainer>
+        <Container>
+          <Typography variant="subtitle1">
+            Zapraszamy do zabawy, w której sprawdzisz, na ile Twój styl życia
+            jest przyjazny dla świata. Czy produkujesz dużo odpadów, czy starasz
+            się temu zapobiegać? Każdy Twój ruch sprawi, że nasze drzewko
+            pokryje się pięknymi liśćmi lub będzie usychać… Postaraj się je
+            zazielenić!
+          </Typography>
+          <Typography variant="subtitle1" style={typographyStyles}>
+            Aplikacja "Odpadometr, quiz o zero waste" powstała dzięki
+            zaangażowaniu wolontariuszy „Po-Dzielni”: Darii, Joannie, Kalinie,
+            Kubie, Monice, Paulinie i Sumo
+          </Typography>
+          <Typography variant="subtitle1" style={typographyStyles}>
+            przy współpracy Fundacji Enea. Korzystanie z niej jest darmowe.
+          </Typography>
+        </Container>
+        <Typography variant="subtitle2" style={{ textAlign: 'center' }}>
+          Copyright: Po-Dzielnia
         </Typography>
-      </Container>
+      </OuterContainer>
     </>
   );
 }

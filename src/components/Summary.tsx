@@ -2,7 +2,7 @@ import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import tree from 'assets/drzewko-bw.svg';
+import tree from 'assets/tree.png';
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -10,8 +10,9 @@ import { ReduxState } from 'store/reducers/rootReducer';
 
 const OuterContainer = withStyles({
   root: {
+    background: '#fff',
     height: '100vh',
-    padding: '3rem 2rem 0rem 2rem',
+    padding: '2rem 0.5rem 0rem 0.5rem',
     textAlign: 'center',
     display: 'flex',
     flexDirection: 'column',
@@ -30,12 +31,12 @@ const InnerContainer = withStyles({
 const StyledButton = withStyles({
   root: {
     margin: '2rem 1rem 1rem 1rem',
+    background: '#dedfe8',
   },
 })(Button);
 
 const TransparentButton = withStyles({
   root: {
-    color: '#009688',
     background: 'none',
     '&:hover': {
       background: 'none',
@@ -51,7 +52,7 @@ const imgStyles = {
 
 const linkStyles = {
   textDecoration: 'none',
-  color: '#009688',
+  color: '#000',
 };
 
 interface Props {
@@ -62,14 +63,14 @@ export function Summary({ scoreCount }: Props) {
   return (
     <>
       <OuterContainer maxWidth="sm">
-        <Typography variant="h6">Podsumowanie</Typography>
+        <Typography variant="h6">Dzięki za udział w zabawie!</Typography>
         <Typography variant="h6" style={{ margin: '1.5rem' }}>
           {scoreCount}/10
         </Typography>
         <Typography variant="subtitle1">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda,
-          repudiandae! Vel, aperiam debitis officia officiis quam laborum.
+          Fajnie, że zerowaste jest dla Ciebie ważne.
         </Typography>
+        <Typography variant="subtitle1">Oby tak dalej!</Typography>
         <InnerContainer>
           <StyledButton>UDOSTĘPNIJ NA FACEBOOKU</StyledButton>
           <TransparentButton>
@@ -78,7 +79,12 @@ export function Summary({ scoreCount }: Props) {
             </Link>
           </TransparentButton>
         </InnerContainer>
-        <img src={tree} style={imgStyles} alt="tree illustration" />
+        <img
+          src={tree}
+          style={imgStyles}
+          alt="tree illustration"
+          className="summary__tree"
+        />
       </OuterContainer>
     </>
   );

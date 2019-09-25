@@ -10,6 +10,8 @@ import {
   WithStyles,
 } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import leafIconGood from 'assets/leaf-good.svg';
+import leafIconWrong from 'assets/leaf-wrong.svg';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -64,9 +66,9 @@ const DialogActions = withStyles((theme: Theme) => ({
 
 const StyledButton = withStyles({
   root: {
-    background: '#009688',
+    background: '#dedfe8',
     '&:hover': {
-      backgroundColor: '#009688',
+      backgroundColor: '#dedfe8',
     },
   },
 })(Button);
@@ -100,27 +102,30 @@ export default function Modal({
         <DialogTitle id="customized-dialog-title" closeModal={closeModal}>
           {message}
         </DialogTitle>
+        {message === 'Dobra odpowiedź!' ? (
+          <img src={leafIconGood} className="leaf-icon" />
+        ) : (
+          <img src={leafIconWrong} className="leaf-icon" />
+        )}
         <DialogContent>
           <Typography gutterBottom align="center">
             {hint}
           </Typography>
         </DialogContent>
+        <Typography gutterBottom align="center" style={{ fontWeight: 'bold' }}>
+          Ukończono {answerNumber}/{questionsLength}
+        </Typography>
         <DialogActions>
-          <StyledButton
-            variant="contained"
-            color="primary"
-            onClick={closeModal}
-          >
+          <StyledButton variant="contained" onClick={closeModal}>
             {answerNumber === questionsLength ? (
-              <Link to={'/summary'}>{btnLastQuestion} </Link>
+              <Link to={'/summary'} className="summary__link">
+                {btnLastQuestion}{' '}
+              </Link>
             ) : (
               btnNextQuestion
             )}
           </StyledButton>
         </DialogActions>
-        <Typography gutterBottom align="center">
-          Ukończono {answerNumber}/{questionsLength}
-        </Typography>
       </CompleteDialog>
     </div>
   );
