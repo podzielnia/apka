@@ -1,9 +1,11 @@
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { goodAnswer, wrongAnswer } from '../store/reducers/actions';
 import { Box, Button, ButtonGroup, Container } from '@material-ui/core';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Cancel from '@material-ui/icons/Cancel';
 import CheckCircle from '@material-ui/icons/CheckCircle';
-import React, { useState } from 'react';
 import { Answer, Question } from '../types/Question';
 import Bar from './Bar';
 import Modal from './Modal';
@@ -54,13 +56,17 @@ interface Props {
   questionNumber: number;
   questionsTotalNumber: number;
   onAnswerPick: () => void;
+  goodAnswerPick: () => void;
+  wrongAnswerPick: () => void;
 }
 
-export default function QuestionContainer({
+export function QuestionContainer({
   question,
   questionNumber,
   questionsTotalNumber,
   onAnswerPick,
+  goodAnswerPick,
+  wrongAnswerPick,
 }: Props) {
   const [modalVisible, setModalVisible] = useState(false);
   const [chosenAnswer, setChosenAnswer] = useState({} as Answer);
@@ -74,6 +80,11 @@ export default function QuestionContainer({
   const onPick = (answer: Answer) => {
     setModalVisible(true);
     setChosenAnswer(answer);
+    if (answer.isCorrect) {
+      goodAnswerPick();
+    } else {
+      wrongAnswerPick();
+    }
   };
 
   const classes = useStyles();
@@ -113,3 +124,13 @@ export default function QuestionContainer({
     </QuizContainer>
   );
 }
+
+const mapDispatchToProps = {
+  goodAnswerPick: goodAnswer,
+  wrongAnswerPick: wrongAnswer,
+};
+
+export default connect(
+  null,
+  mapDispatchToProps,
+)(QuestionContainer);

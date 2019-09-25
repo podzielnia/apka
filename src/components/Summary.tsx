@@ -4,7 +4,9 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import tree from 'assets/tree.png';
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { ReduxState } from 'store/reducers/rootReducer';
 
 const OuterContainer = withStyles({
   root: {
@@ -53,13 +55,17 @@ const linkStyles = {
   color: '#000',
 };
 
-export default function Summary() {
+interface Props {
+  scoreCount: number;
+}
+
+export function Summary({ scoreCount }: Props) {
   return (
     <>
       <OuterContainer maxWidth="sm">
         <Typography variant="h6">Dzięki za udział w zabawie!</Typography>
         <Typography variant="h6" style={{ margin: '1.5rem' }}>
-          Twój wynik: 10/10
+          {scoreCount}/10
         </Typography>
         <Typography variant="subtitle1">
           Fajnie, że zerowaste jest dla Ciebie ważne.
@@ -83,3 +89,11 @@ export default function Summary() {
     </>
   );
 }
+
+const mapStateToProps = (state: ReduxState) => {
+  return {
+    scoreCount: state.score.count,
+  };
+};
+
+export default connect(mapStateToProps)(Summary);

@@ -5,7 +5,9 @@ import Typography from '@material-ui/core/Typography';
 import menuImg from 'assets/img-menu.png';
 import logo from 'assets/podzielnia.png';
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { resetScore } from '../store/reducers/actions';
 import { routes } from './Routes';
 
 const OuterContainer = withStyles({
@@ -55,7 +57,13 @@ const transparentButtonLink = {
   color: '#000',
 };
 
-export default function Menu() {
+interface Props {
+  resetScoreCount: () => void;
+}
+
+export function Menu({ resetScoreCount }: Props) {
+  resetScoreCount();
+
   return (
     <OuterContainer>
       <img src={logo} className="podzielnia-logo" />
@@ -80,3 +88,8 @@ export default function Menu() {
     </OuterContainer>
   );
 }
+
+export default connect(
+  null,
+  { resetScoreCount: resetScore },
+)(Menu);
