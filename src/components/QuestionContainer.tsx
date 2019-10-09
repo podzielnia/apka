@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { goodAnswer, wrongAnswer } from '../store/reducers/actions';
 import { Box, Button, ButtonGroup, Container } from '@material-ui/core';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Cancel from '@material-ui/icons/Cancel';
 import CheckCircle from '@material-ui/icons/CheckCircle';
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { ReduxState } from 'store/reducers/rootReducer';
+import { goodAnswer, wrongAnswer } from '../store/reducers/actions';
 import { Answer, Question } from '../types/Question';
 import Bar from './Bar';
 import Modal from './Modal';
@@ -55,6 +56,8 @@ interface Props {
   question: Question;
   questionNumber: number;
   questionsTotalNumber: number;
+  goodAnswerCounter: number;
+  wrongAnswerCounter: number;
   onAnswerPick: () => void;
   goodAnswerPick: () => void;
   wrongAnswerPick: () => void;
@@ -64,6 +67,8 @@ export function QuestionContainer({
   question,
   questionNumber,
   questionsTotalNumber,
+  goodAnswerCounter,
+  wrongAnswerCounter,
   onAnswerPick,
   goodAnswerPick,
   wrongAnswerPick,
@@ -96,13 +101,13 @@ export function QuestionContainer({
         <CustomButtonGroup>
           <Button classes={{ root: classes.wrong }}>
             <Typography variant="h6" style={{ marginRight: '0.5rem' }}>
-              4
+              {wrongAnswerCounter}
             </Typography>
             <Cancel color="error" />
           </Button>
           <Button classes={{ root: classes.root }}>
             <Typography variant="h6" style={{ marginRight: '0.5rem' }}>
-              2
+              {goodAnswerCounter}
             </Typography>
             <CheckCircle />
           </Button>
@@ -130,7 +135,14 @@ const mapDispatchToProps = {
   wrongAnswerPick: wrongAnswer,
 };
 
+const mapStateToProps = (state: ReduxState) => {
+  return {
+    goodAnswerCounter: state.score.goodAnswers,
+    wrongAnswerCounter: state.score.wrongAnswers,
+  };
+};
+
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps,
 )(QuestionContainer);

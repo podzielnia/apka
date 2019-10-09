@@ -1,11 +1,13 @@
 import { AnyAction } from 'redux';
 
 export interface ScoreState {
-  count: number;
+  goodAnswers: number;
+  wrongAnswers: number;
 }
 
 export const initialState: ScoreState = {
-  count: 0,
+  goodAnswers: 0,
+  wrongAnswers: 0,
 };
 
 export const scoreReducer = (
@@ -14,9 +16,11 @@ export const scoreReducer = (
 ): ScoreState => {
   switch (action.type) {
     case 'GOOD_ANSWER':
-      return { count: ++state.count };
+      return { ...state, goodAnswers: ++state.goodAnswers };
+    case 'WRONG_ANSWER':
+      return { ...state, wrongAnswers: ++state.wrongAnswers };
     case 'RESET_SCORE':
-      return { count: 0 };
+      return { goodAnswers: 0, wrongAnswers: 0 };
     default:
       return state;
   }

@@ -92,7 +92,7 @@ export function Summary({ scoreCount }: Props) {
 
 const mapStateToProps = (state: ReduxState) => {
   return {
-    scoreCount: state.score.count,
+    scoreCount: state.score.goodAnswers,
   };
 };
 
