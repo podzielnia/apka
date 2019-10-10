@@ -5,15 +5,12 @@
   "dependencies": {
     "@material-ui/core": "^4.3.2",
     "@material-ui/icons": "^4.2.1",
-    "firestore": "^1.1.6",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-redux": "^7.1.0",
-    "react-redux-firebase": "3.0.0-alpha.12",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1",
     "redux": "^4.0.4",
-    "redux-firestore": "^0.8.0",
     "typescript": "3.5.3"
   },
   "scripts": {
@@ -50,7 +47,6 @@
     "@storybook/addon-links": "^5.1.11",
     "@storybook/addons": "^5.1.11",
     "@storybook/react": "^5.1.11",
-    "@types/firebase": "^3.2.1",
     "@types/jest": "24.0.17",
     "@types/node": "12.7.2",
     "@types/react": "16.9.2",
