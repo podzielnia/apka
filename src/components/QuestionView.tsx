@@ -19,16 +19,18 @@ const QuestionWrapper = withStyles({
     flexDirection: 'column',
     justifyItems: 'space-between',
     width: '100%',
+    background: '#dedfe8',
+    padding: '2.3rem 0rem',
   },
 })(Box);
 
 const BorderLinearProgress = withStyles({
   root: {
     height: 10,
-    backgroundColor: lighten('#2e378d', 0.7),
+    backgroundColor: lighten('#fff', 0.7),
     width: '90%',
     borderRadius: '10px',
-    marginBottom: '0.5rem',
+    margin: '1rem auto 0.5rem auto',
   },
   bar: {
     borderRadius: 20,
@@ -39,10 +41,10 @@ const BorderLinearProgress = withStyles({
 export default ({ question, onPickAnswer, progress }: Props) => (
   <>
     <QuestionImage image={question.image} />
-    <BorderLinearProgress variant="determinate" value={progress} />
     <QuestionWrapper>
       <QuestionText text={question.title} />
       <AnswerPicker onPick={onPickAnswer} answers={question.answers} />
+      <BorderLinearProgress variant="determinate" value={progress} />
     </QuestionWrapper>
   </>
 );
