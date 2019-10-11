@@ -17,7 +17,7 @@ const AnswerButton = withStyles({
   root: {
     display: 'flex',
     flexDirection: 'column',
-    background: '#dedfe8',
+    background: '#fff',
     color: '#000',
     height: '5rem',
     maxHeight: '10rem',
@@ -26,7 +26,7 @@ const AnswerButton = withStyles({
     position: 'relative',
     paddingLeft: '4rem',
     '&:hover': {
-      background: '#dedfe8',
+      background: '#fff',
     },
   },
 })(Button);

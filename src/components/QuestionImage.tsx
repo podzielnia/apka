@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme: Theme) =>
       flexGrow: 1,
     },
     img: {
-      margin: '4rem auto 1rem auto',
+      margin: '1rem auto 1rem auto',
       display: 'block',
       minWidth: '40%',
       minHeight: '40%',
