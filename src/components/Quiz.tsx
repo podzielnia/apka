@@ -1,22 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { connect } from 'react-redux';
-import { firestoreConnect } from 'react-redux-firebase';
-import { compose } from 'redux';
 
-import { ReduxState } from 'store/reducers/rootReducer';
 import { shuffle } from 'utils';
 import { Question } from '../types/Question';
 import Loading from './Loading';
 import QuestionContainer from './QuestionContainer';
 
+import rawQuestions from '../assets/questions';
+
 const getRandomQuestionsPool = (questions: Question[]): Question[] =>
   shuffle<Question>([...questions]).slice(0, 10);
 
-interface Props {
-  questions?: Question[];
-}
+export default () => {
+  const questions: Question[] = rawQuestions;
 
-export const Quiz = ({ questions }: Props) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [questionsPool, setQuestionsPool] = useState([] as Question[]);
 
@@ -51,14 +47,3 @@ export const Quiz = ({ questions }: Props) => {
     <Loading />
   );
 };
-
-const mapStateToProps = (state: ReduxState) => {
-  return {
-    questions: state.firestore.ordered.questions,
-  };
-};
-
-export default compose<any>(
-  connect(mapStateToProps),
-  firestoreConnect([{ collection: 'questions' }]),
-)(Quiz);
