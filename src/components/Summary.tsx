@@ -75,9 +75,18 @@ export function Summary({ scoreCount }: Props) {
           <StyledButton>UDOSTĘPNIJ NA FACEBOOKU</StyledButton>
           <TransparentButton>
             <Link to="/" style={linkStyles}>
-              Wróć do strony głównej
+              Zagraj jeszcze raz
             </Link>
           </TransparentButton>
+           <Typography variant="subtitle1">
+            <Link to="https://podzielnia.pl" style={linkStyles}>
+              Wróć do Po-Dzielni
+            </Link>
+            <Link to="https://patronite.pl/Po-Dzielnia" style={linkStyles}>
+              PATRONITE Po-Dzielni
+            </Link>             
+             
+          </Typography>         
         </InnerContainer>
         <img
           src={tree}
