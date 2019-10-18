@@ -438,7 +438,7 @@ export default [
         text: 'Otaczają cię chustki jednorazowe',
         isCorrect: false,
         hint:
-          'Przemyśl, czy to koniecznie. Chusteczki jednorazowe to jeden z tych przedmiotów, do jakich przyzwyczailiśmy się. Tymczasem mozna je zastąpić zwykłymi materiałowymi, jakich używali Wasi rodzice. Nawet przy porządnym katarze!',
+          'Przemyśl, czy to konieczne. Chusteczki jednorazowe to jeden z tych przedmiotów, do jakich przyzwyczailiśmy się. Tymczasem mozna je zastąpić zwykłymi materiałowymi, jakich używali Wasi rodzice. Nawet przy porządnym katarze!',
       },
     ],
     image: 'images/23.png',
@@ -451,7 +451,7 @@ export default [
         text: 'Piszesz napełnianym piórem lub zmieniasz wkłady do długopisów',
         isCorrect: true,
         hint:
-          'Twoja decyzja nam się podoba. Jednorazowe długopisy to chyba najcześciej trafiająca do śmietników element piórnika. A przecież są inne rozwiązania. ',
+          'Twoja decyzja nam się podoba. Jednorazowe długopisy to chyba najczęściej trafiająca do śmietników element piórnika. A przecież są inne rozwiązania. ',
       },
       {
         text: 'Używasz długopisów i cienkopisów, które po wypisaniu wyrzucasz',
