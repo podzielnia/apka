@@ -23,13 +23,13 @@ export default [
     title: 'W Twojej ulubionej bluzie zepsuł się zamek. Co robisz?',
     answers: [
       {
-        text: 'Zanoszę do naprawy do krawca',
+        text: 'Zanosisz do naprawy do krawca',
         isCorrect: true,
         hint:
           'Znakomicie! Naprawianie zepsutych rzeczy to jedna z głównych zasad ekologicznego stylu życia. Lepiej naprawić niż wyrzucać. To oszczędność zasobów ziemi, które się kończą (uprawy roślin dla przemysłu modowego pochłaniają ogromne ilości wody) oraz pieniędzy. To także stawianie oporu przemysłowi reklamowemu, który wciąż namawia nas do kupowania.',
       },
       {
-        text: 'Kupuję nową, starą wyrzucam',
+        text: 'Kupujesz nową, starą wyrzucasz',
         isCorrect: false,
         hint:
           'Może przekonasz się do naprawiania? Naprawianie zepsutych rzeczy to jedna z głównych zasad ekologicznego stylu życia. Lepiej naprawić niż wyrzucać. To oszczędność zasobów ziemi, które się kończą (uprawy roślin dla przemysłu modowego pochłaniają ogromne ilości wody) oraz pieniędzy. To także stawianie oporu przemysłowi reklamowemu, który wciąż namawia nas do kupowania.',
@@ -61,13 +61,13 @@ export default [
     title: 'Idąc na zakupy:',
     answers: [
       {
-        text: 'Zabieram z domu własną torbę',
+        text: 'Zabierasz z domu własną torbę',
         isCorrect: true,
         hint:
           'Gratulacje! Chodzenie na zakupy z własną wielorazową torbą to jeden z najprostszych nawyków ekologicznych. Po co nam dziesiątki plastikowych reklamówek, które rozkładają się setki lat?',
       },
       {
-        text: 'Korzystam z płatnych reklamówek',
+        text: 'Korzystasz z płatnych reklamówek',
         isCorrect: false,
         hint:
           'Spróbuj to zmienić. Chodzenie na zakupy z własną wielorazową torbą to jeden z najprostszych nawyków ekologicznych. Po co nam dziesiątki plastikowych reklamówek, które rozkładają się setki lat?',
@@ -80,13 +80,13 @@ export default [
     title: 'Śniadanie do szkoły:',
     answers: [
       {
-        text: 'Przynoszę z domu w wielorazowym pudełku',
+        text: 'Przynosisz z domu w wielorazowym pudełku',
         isCorrect: true,
         hint:
           'Tylko tak dalej! Domowe jedzenie jest tańsze i zazwyczaj zdrowsze niż produkty kupione w sklepiku. W dodatku nie powstają odpady, bo brudny pojemnik możesz zapakować i umyć w domu. ',
       },
       {
-        text: 'Kupuję w sklepiku, a opakowania wyrzucam',
+        text: 'Kupujesz w sklepiku, a opakowania wyrzucasz',
         isCorrect: false,
         hint:
           'A może pomyślisz nad innym rozwiązaniem?  Domowe jedzenie jest tańsze i zazwyczaj zdrowsze niż produkty kupione w sklepiku. W dodatku nie powstają odpady, bo brudny pojemnik możesz zapakować i umyć w domu.',
