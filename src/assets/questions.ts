@@ -13,7 +13,7 @@ export default [
         text: 'Ze sklepu w jednorazowej butelce',
         isCorrect: false,
         hint:
-          'Spróbuj przekonac się do kranówki! Picie wody z kranu jest dobre dla środowiska (nie powstaje zbędny plastik) i dla Twojej kieszeni. Ogromna większość wodociągów w Polsce zapewnia wodę o jakości lepszej niż przeciętna woda z butelki. Najlepiej wlewać ją kilka sekund po odkręceniu kranu do metalowego lub szklanego bidonu.',
+          'Spróbuj przekonać się do kranówki! Picie wody z kranu jest dobre dla środowiska (nie powstaje zbędny plastik) i dla Twojej kieszeni. Ogromna większość wodociągów w Polsce zapewnia wodę o jakości lepszej niż przeciętna woda z butelki. Najlepiej wlewać ją kilka sekund po odkręceniu kranu do metalowego lub szklanego bidonu.',
       },
     ],
     image: 'images/1.png',
@@ -51,14 +51,14 @@ export default [
         text: 'Byle jak najdalej, samolotem…',
         isCorrect: false,
         hint:
-          'Może następnym razem spróbujesz zrezygnowaćz dalekich podróży samolotem? Wakacje spędzone lokalnie, na które jedziemy pociagiem lub samochodem w kilka osób, a potem korzystamy z rowerów nie przyczyniają się do emisji dwutlenku węgla, tak jak przelot na dalekie plaże. A przecież mogą być równie ciekawe! ',
+          'Może następnym razem spróbujesz zrezygnować z dalekich podróży samolotem? Wakacje spędzone lokalnie, na które jedziemy pociągiem lub samochodem w kilka osób, a potem korzystamy z rowerów nie przyczyniają się do emisji dwutlenku węgla, tak jak przelot na dalekie plaże. A przecież mogą być równie ciekawe! ',
       },
     ],
     image: 'images/3.png',
   },
   {
     id: '4',
-    title: 'Idąc do sklepu:',
+    title: 'Idąc na zakupy:',
     answers: [
       {
         text: 'Zabieram z domu własną torbę',
@@ -83,13 +83,13 @@ export default [
         text: 'Przynoszę z domu w wielorazowym pudełku',
         isCorrect: true,
         hint:
-          'Tylko tak dalej! Domowe jedzenie jest tańsze i zazwyczaj zdrowsze niz produkty kupione w sklepiku. W dodatku nie powstają odpady, bo brudny pojemnik mozesz zapakowac i umyć w domu. ',
+          'Tylko tak dalej! Domowe jedzenie jest tańsze i zazwyczaj zdrowsze niż produkty kupione w sklepiku. W dodatku nie powstają odpady, bo brudny pojemnik możesz zapakować i umyć w domu. ',
       },
       {
         text: 'Kupuję w sklepiku, a opakowania wyrzucam',
         isCorrect: false,
         hint:
-          'A może pomyślisz nad innym rozwiązaniem?  Domowe jedzenie jest tańsze i zazwyczaj zdrowsze niz produkty kupione w sklepiku. W dodatku nie powstają odpady, bo brudny pojemnik mozesz zapakować i umyć w domu.',
+          'A może pomyślisz nad innym rozwiązaniem?  Domowe jedzenie jest tańsze i zazwyczaj zdrowsze niż produkty kupione w sklepiku. W dodatku nie powstają odpady, bo brudny pojemnik możesz zapakować i umyć w domu.',
       },
     ],
     image: 'images/5.png',
@@ -102,13 +102,13 @@ export default [
         text: 'Szukasz serwisu, w którym możesz je naprawić',
         isCorrect: true,
         hint:
-          'Brawo! Naprawianie zepsutych rzeczy to jedna z głównych zasad ekologicznego stylu życia. Lepiej naprawić niż wyrzucać. To oszczędność zasobów ziemi, które się kończą oraz pieniędzy. To także stawianie oporu przemysłowi reklamowemu, który namawia nas do kupowaniam co sezon nowej rzeczy, a przecież w ten sposób rośnie góra odpadów!',
+          'Brawo! Naprawianie zepsutych rzeczy to jedna z głównych zasad ekologicznego stylu życia. Lepiej naprawić niż wyrzucać. To oszczędność zasobów ziemi, które się kończą oraz pieniędzy. To także stawianie oporu przemysłowi reklamowemu, który namawia nas do kupowania co sezon nowej rzeczy, a przecież w ten sposób rośnie góra odpadów!',
       },
       {
         text: 'Kupujesz nowe (w promocji)',
         isCorrect: false,
         hint:
-          'Może przekonasz się do naprawiania? Naprawianie zepsutych rzeczy to jedna z głównych zasad ekologicznego stylu życia. Lepiej naprawić niż wyrzucać. To oszczędność zasobów ziemi, które się kończą oraz pieniędzy. To także stawianie oporu przemysłowi reklamowemu, który wciąż namawia nas do kupowania co sezon nowej rezczy, a przecież w ten sposób rośnie góra odpadów!',
+          'Może przekonasz się do naprawiania? Naprawianie zepsutych rzeczy to jedna z głównych zasad ekologicznego stylu życia. Lepiej naprawić niż wyrzucać. To oszczędność zasobów ziemi, które się kończą oraz pieniędzy. To także stawianie oporu przemysłowi reklamowemu, który wciąż namawia nas do kupowania co sezon nowej rzeczy, a przecież w ten sposób rośnie góra odpadów!',
       },
     ],
     image: 'images/6.png',
@@ -122,13 +122,13 @@ export default [
           'Ograniczasz ich ilość, zwracasz uwagę na opakowanie (szkło lub forma kostki)',
         isCorrect: true,
         hint:
-          'Brawo! W naszych łazienkach powstaje bardzo duzo odpadów. Warto wrócić do zwyczajów sprzed lat i nie kupować dziesiątek różnych kosmetyków. Jeśli coś potrzeba, wybierz szampon lub mydło w kostce albo szklanym opakowaniu. ',
+          'Brawo! W naszych łazienkach powstaje bardzo dużo odpadów. Warto wrócić do zwyczajów sprzed lat i nie kupować dziesiątek różnych kosmetyków. Jeśli coś potrzeba, wybierz szampon lub mydło w kostce albo szklanym opakowaniu. ',
       },
       {
         text: 'Kupujesz w plastikowych opakowaniach',
         isCorrect: false,
         hint:
-          'Zastanów się nad zmianą nawyków. W naszych łazienkach powstaje bardzo duzo odpadów. Warto wrócić do zwyczajów sprzed lat i nie kupować dziesiątek róznych kosmetyków. Jesli cos potrzeba wybierz szampon lub mydło w kostce albo szklanym opakowaniu. ',
+          'Zastanów się nad zmianą nawyków. W naszych łazienkach powstaje bardzo dużo odpadów. Warto wrócić do zwyczajów sprzed lat i nie kupować dziesiątek różnych kosmetyków. Jeśli coś potrzeba, wybierz szampon lub mydło w kostce albo szklanym opakowaniu. ',
       },
     ],
     image: 'images/7.png',
@@ -148,7 +148,7 @@ export default [
         text: 'Używasz plastikowych patyczków do ich czyszczenia',
         isCorrect: false,
         hint:
-          'Hmmm... spróbuj zrezygnowac z ich używania.  Plastikowe patyczki do uszu są jednym z symboli niepotrzebnych przedmiotów, do których stosowania przyzwyczailiśmy się. Lata temu w ogóle ich nie stosowano, a dziś stanowią spora część zanieczyszczeń wyławianych z wód. Na szczęście nie są nam niezbędne!',
+          'Hmmm... spróbuj zrezygnować z ich używania.  Plastikowe patyczki do uszu są jednym z symboli niepotrzebnych przedmiotów, do których stosowania przyzwyczailiśmy się. Lata temu w ogóle ich nie stosowano, a dziś stanowią spora część zanieczyszczeń wyławianych z wód. Na szczęście nie są nam niezbędne!',
       },
     ],
     image: 'images/8.png',
@@ -161,13 +161,13 @@ export default [
         text: 'Wybierasz takie w wafelku',
         isCorrect: true,
         hint:
-          'Świetnie! Aby zjeść smacznego loda, nie trzeba produkowac odpadów. Podobnie sprawa sie ma nawet z frytkami zamawianymi w wafelku czy jedzeniem podanym na jadalnych talerzach z otrębów. ',
+          'Świetnie! Aby zjeść smacznego loda, nie trzeba produkować odpadów. Podobnie sprawa się ma nawet z frytkami zamawianymi w wafelku czy jedzeniem podanym na jadalnych talerzach z otrębów. ',
       },
       {
         text: 'Zabierasz do plastikowego kubeczka i jesz jednorazową łyżeczką',
         isCorrect: false,
         hint:
-          'A może spróbujesz inaczej? Aby zjeść smacznego loda, nie trzeba produkowac odpadów. Podobnie sprawa ma się nawet z frytkami zamawianymi w wafelku czy jedzeniem podanym na jadalnych talerzach z otrębów. ',
+          'A może spróbujesz inaczej? Aby zjeść smacznego loda, nie trzeba produkować odpadów. Podobnie sprawa ma się nawet z frytkami zamawianymi w wafelku czy jedzeniem podanym na jadalnych talerzach z otrębów. ',
       },
     ],
     image: 'images/9.png',
@@ -181,7 +181,7 @@ export default [
           'Zamawiasz ją na miejscu i wypijasz w filiżance lub zabierasz do własnego kubka',
         isCorrect: true,
         hint:
-          'To nam się podoba! Moda na jednorazowe kubki, z którymi chodzi sie po ulicy przyszła do nas niedawno. A przecież kawę mozna wypić na miejscu lub w ostateczności zabrać ją do własnego wielorazowego kubka.',
+          'To nam się podoba! Moda na jednorazowe kubki, z którymi chodzi się po ulicy przyszła do nas niedawno. A przecież kawę można wypić na miejscu lub w ostateczności zabrać ją do własnego wielorazowego kubka.',
       },
       {
         text: 'Pędzisz dalej z kubkiem jednorazowym w ręku',
@@ -238,7 +238,7 @@ export default [
         text: 'Oddajesz w punkcie zbiórki elektroodpadów',
         isCorrect: true,
         hint:
-          'Bardzo dobrze! W punkcie zbiórki elektroodpadów stare radio lub telefon trafi w dobre ręce. Soecjaliści odzyskają z niego to, co cenne, a reszta trafi w bezpieczny sposób do przetworzenia. ',
+          'Bardzo dobrze! W punkcie zbiórki elektroodpadów stare radio lub telefon trafi w dobre ręce. Specjaliści odzyskają z niego to, co cenne, a reszta trafi w bezpieczny sposób do przetworzenia. ',
       },
       {
         text: 'Wyrzucasz do kosza',
@@ -303,7 +303,7 @@ export default [
         text: 'W plastikowym pojemniku',
         isCorrect: false,
         hint:
-          'Czy ten plastik jest konieczny? Szkło jest surowcem, którego w przeciwieństwie do większości plastiku mozna używac wielokrotnie. Poza tym nawet,  gdy się stłucze, jego drobinki stanowią szybko biodegradowalny element natury, w przeciwienstwie do plastiku.  ',
+          'Czy ten plastik jest konieczny? Szkło jest surowcem, którego w przeciwieństwie do większości plastiku można używać wielokrotnie. Poza tym nawet,  gdy się stłucze, jego drobinki stanowią szybko biodegradowalny element natury, w przeciwieństwie do plastiku.  ',
       },
     ],
     image: 'images/16.png',
@@ -316,7 +316,7 @@ export default [
         text: 'Korzystasz z bibliotek',
         isCorrect: true,
         hint:
-          'Swietnie! Biblioteki to centra kultury lokalnej! Większość książek czytamy jeden raz, dlatego warto wypożyczać.',
+          'Świetnie! Biblioteki to centra kultury lokalnej! Większość książek czytamy jeden raz, dlatego warto wypożyczać.',
       },
       {
         text: 'Zawsze kupujesz',
@@ -342,7 +342,7 @@ export default [
         text: 'Wrzucasz do wc',
         isCorrect: false,
         hint:
-          'Niestety, do toalety nie powinny trafiać odpadki z naszych koszów! Resztki organiczne to cenny surowiec do wytworzenia kompostu, czyli wartościowej dla roślin ziemi pełnej minerałów. To, czego nie zjemy, może się jeszcze im przydać! Kompostowaniem może zająć się każdy, nawet mieszkając w bloku.Może zgłębisz temat i spróbujesz?',
+          'Niestety, do toalety nie powinny trafiać odpadki z naszych koszów! Resztki organiczne to cenny surowiec do wytworzenia kompostu, czyli wartościowej dla roślin ziemi pełnej minerałów. To, czego nie zjemy, może się jeszcze im przydać! Kompostowaniem może zająć się każdy, nawet mieszkając w bloku. Może zgłębisz temat i spróbujesz?',
       },
     ],
     image: 'images/18.png',
@@ -399,7 +399,7 @@ export default [
         text: 'Prosisz rodziców o pieniądze, by kupić im prezenty',
         isCorrect: false,
         hint:
-          'Zastanów się nad zmianą tego przywyczajenia.  Prezenty są formą wyrażenia uczuć, ale nie zawsze muszą być kupione. Własnoręcznie zrobiony ładny praktyczny przedmiot na pewno ucieszy Twoich bliskich, bo docenią Twoje zaangażowanie. ',
+          'Zastanów się nad zmianą tego przyzwyczajenia.  Prezenty są formą wyrażenia uczuć, ale nie zawsze muszą być kupione. Własnoręcznie zrobiony ładny praktyczny przedmiot na pewno ucieszy Twoich bliskich, bo docenią Twoje zaangażowanie. ',
       },
     ],
     image: 'images/21.png',
@@ -438,7 +438,7 @@ export default [
         text: 'Otaczają cię chustki jednorazowe',
         isCorrect: false,
         hint:
-          'Przemyśl, czy to konieczne. Chusteczki jednorazowe to jeden z tych przedmiotów, do jakich przywyczailiśmy się. Tymczasem mozna je zastąpić zwykłymi materiałowymi, jakich używali Wasi rodzice. Nawet przy porządnym katarze!',
+          'Przemyśl, czy to koniecznie. Chusteczki jednorazowe to jeden z tych przedmiotów, do jakich przyzwyczailiśmy się. Tymczasem mozna je zastąpić zwykłymi materiałowymi, jakich używali Wasi rodzice. Nawet przy porządnym katarze!',
       },
     ],
     image: 'images/23.png',
@@ -451,13 +451,13 @@ export default [
         text: 'Piszesz napełnianym piórem lub zmieniasz wkłady do długopisów',
         isCorrect: true,
         hint:
-          'Twoja decyzja nam się podoba. Jednorazowe długopisy to chyba najczesciej trafiająca do śmietników element piórnika. A przecież są inne rozwiązania. ',
+          'Twoja decyzja nam się podoba. Jednorazowe długopisy to chyba najcześciej trafiająca do śmietników element piórnika. A przecież są inne rozwiązania. ',
       },
       {
         text: 'Używasz długopisów i cienkopisów, które po wypisaniu wyrzucasz',
         isCorrect: false,
         hint:
-          'A moze zaopatrzysz się w pióro na naboje lub wymienisz wklady w długopisie? Jednorazowe długopisy to chyba najczesciej trafiająca do śmietników element piórnika. A przecież są inne rozwiązania. ',
+          'A moze zaopatrzysz się w pióro na naboje lub wymienisz wkłady w długopisie? Jednorazowe długopisy to chyba najczęściej trafiająca do śmietników element piórnika. A przecież są inne rozwiązania. ',
       },
     ],
     image: 'images/24.png',
@@ -468,16 +468,16 @@ export default [
     answers: [
       {
         text:
-          'Naprawiasz telefon, jesli się zepsuje lub inwestujesz w model, który posłuży ci wiele lat',
+          'Naprawiasz telefon, jeśli się zepsuje lub inwestujesz w model, który posłuży ci wiele lat',
         isCorrect: true,
         hint:
-          'Słusznie, bez telefonu trudno dziś żyć, ale czy trzeba zmieniac go tak często, jak chcieliby tego producenci? Produkcja każdego aparatu wiąze się z wydobyciem cennych pierwiastków, a używane telefony często trafiają do śmieci. Dobrze więc robisz naprawiając telefony lub zainwestować w model, który posłuży ci wiele lat. ',
+          'Słusznie, bez telefonu trudno dziś żyć, ale czy trzeba zmieniać go tak często, jak chcieliby tego producenci? Produkcja każdego aparatu wiąże się z wydobyciem cennych pierwiastków, a używane telefony często trafiają do śmieci. Dobrze więc robisz naprawiając telefony lub inwestując w model, który posłuży ci wiele lat. ',
       },
       {
         text: 'Zmieniasz aparat co dwa lata',
         isCorrect: false,
         hint:
-          'Hmmm, bez telefonu trudno dzis żyć, ale czy trzeba zmieniac go tak często, jak chcieliby tego producenci? Produkcja każdego aparatu wiąze się z wydobyciem cennych pierwiastków, a używane telefony często trafiają do śmieci. Dobrze naprawiać telefony lub zainwestować w model, który posłuzy ci wiele lat. ',
+          'Hmmm, bez telefonu trudno dziś żyć, ale czy trzeba zmieniać go tak często, jak chcieliby tego producenci? Produkcja każdego aparatu wiąże się z wydobyciem cennych pierwiastków, a używane telefony często trafiają do śmieci. Dobrze naprawiać telefony lub zainwestować w model, który posłuży ci wiele lat. ',
       },
     ],
     image: 'images/25.png',
@@ -497,7 +497,7 @@ export default [
         text: 'Kolejna moda',
         isCorrect: false,
         hint:
-          'Przyjdź do Po-Dzielni i weź coś zamiast kupować. Wprowadź inne zmiany w swoim życiu. Moze poczujesz, że to coś wiecej niż modny trend.  To ważne także dla nas. Małe zmiany jakich dokonujemy w Po-Dzielni namawiając ludzi do ograniczenia kupowania cieszą nas każdego dnia. ',
+          'Przyjdź do Po-Dzielni i weź coś zamiast kupować. Wprowadź inne zmiany w swoim życiu. Może poczujesz, że to coś więcej niż modny trend.  To ważne także dla nas. Małe zmiany jakich dokonujemy w Po-Dzielni namawiając ludzi do ograniczenia kupowania cieszą nas każdego dnia. ',
       },
     ],
     image: 'images/26.png',
@@ -530,13 +530,13 @@ export default [
         text: 'Przygotowujesz wielorazowe naczynia',
         isCorrect: true,
         hint:
-          'Sto lat! i gratulacje! Jednorazówki są może wygodniejsze, ale ich zużycie na pewno nie służy środowisku. Korzystanie z naczyń wielorazowych to lepsze dla przyrody rozwiazanie. ',
+          'Sto lat! i gratulacje! Jednorazówki są może wygodniejsze, ale ich zużycie na pewno nie służy środowisku. Korzystanie z naczyń wielorazowych to lepsze dla przyrody rozwiązanie. ',
       },
       {
         text: 'Kupujesz jednorazowe kubki, talerze i sztućce',
         isCorrect: false,
         hint:
-          'Sto lat! Ale może nastepnym razem zrezygnujesz z jednorazówek?  Jednorazówki są może wygodniejsze, ale ich zużycie na pewno nie służy środowisku. Korzystanie z naczyń wielorazowych to lepsze dla przyrody rozwiazanie. ',
+          'Sto lat! Ale może następnym razem zrezygnujesz z jednorazówek?  Jednorazówki są może wygodniejsze, ale ich zużycie na pewno nie służy środowisku. Korzystanie z naczyń wielorazowych to lepsze dla przyrody rozwiązanie. ',
       },
     ],
     image: 'images/28.png',
@@ -546,7 +546,7 @@ export default [
     title: 'Gdy panuje susza:',
     answers: [
       {
-        text: 'Starasz się zadbać o rośliny w twojej okolicy, np.podlewając je',
+        text: 'Starasz się zadbać o rośliny w twojej okolicy, np. podlewając je',
         isCorrect: true,
         hint:
           'To niezwykle miłe! Rośliny wokół nas produkują dla nas tlen, dają cień i oczyszczają powietrze. Jak tylko możemy, pomagajmy im przetrwać!',
