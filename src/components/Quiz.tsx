@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from 'react';
 
 import { shuffle } from 'utils';
-import { Question } from '../types/Question';
+import { Question, Answer } from '../types/Question';
 import Loading from './Loading';
 import QuestionContainer from './QuestionContainer';
 
 import rawQuestions from '../assets/questions';
 
 const getRandomQuestionsPool = (questions: Question[]): Question[] =>
-  shuffle<Question>([...questions]).slice(0, 10);
+  shuffleAnswers(shuffle<Question>([...questions]).slice(0, 10));
+
+const shuffleAnswers = (questions: Question[]): Question[] =>
+  questions.map(question => {
+    const answers = shuffle<Answer>(question.answers);
+    return { ...question, answers };
+  });
 
 export default () => {
   const questions: Question[] = rawQuestions;

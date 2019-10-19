@@ -44,9 +44,9 @@ export default ({ answers, onPick }: Props) => {
   const classes = useStyles();
   return (
     <Container>
-      {answers.map(answer => (
+      {answers.map((answer, index) => (
         <AnswerButton key={answer.text} onClick={() => onPick(answer)}>
-          {answer.isCorrect ? (
+          {index === 0 ? (
             <LooksOne classes={{ root: classes.root }} />
           ) : (
             <LooksTwo classes={{ root: classes.root }} />
