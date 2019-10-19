@@ -2,7 +2,6 @@ import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import tree from 'assets/tree.png';
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -73,27 +72,22 @@ export function Summary({ scoreCount }: Props) {
         <Typography variant="subtitle1">Oby tak dalej!</Typography>
         <InnerContainer>
           <StyledButton>UDOSTĘPNIJ NA FACEBOOKU</StyledButton>
-          <TransparentButton>
+          <TransparentButton style={{ marginBottom: '10%' }}>
             <Link to="/" style={linkStyles}>
               Zagraj jeszcze raz
             </Link>
           </TransparentButton>
-           <Typography variant="subtitle1">
-            <Link to="https://podzielnia.pl" style={linkStyles}>
-              Wróć do Po-Dzielni
-            </Link>
-            <Link to="https://patronite.pl/Po-Dzielnia" style={linkStyles}>
-              PATRONITE Po-Dzielni
-            </Link>             
-             
-          </Typography>         
+          <Button
+            variant="outlined"
+            href="https://podzielnia.pl"
+            style={{ marginBottom: '.5rem' }}
+          >
+            Wróć do Po-Dzielni
+          </Button>
+          <Button variant="outlined" href="https://patronite.pl/Po-Dzielnia">
+            PATRONITE Po-Dzielni
+          </Button>
         </InnerContainer>
-        <img
-          src={tree}
-          style={imgStyles}
-          alt="tree illustration"
-          className="summary__tree"
-        />
       </OuterContainer>
     </>
   );
