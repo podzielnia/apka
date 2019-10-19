@@ -26,20 +26,22 @@ export default function About() {
       <Bar>O PROJEKCIE</Bar>
       <OuterContainer>
         <Container>
+          <Typography variant="h6">
+            ODOPADOMETR
+          </Typography>         
           <Typography variant="subtitle1">
             Zapraszamy do zabawy, w której sprawdzisz, na ile Twój styl życia
             jest przyjazny dla świata. Czy produkujesz dużo odpadów, czy starasz
-            się temu zapobiegać? Każdy Twój ruch sprawi, że nasze drzewko
-            pokryje się pięknymi liśćmi lub będzie usychać… Postaraj się je
-            zazielenić!
+            się temu zapobiegać? 
+            Sprawdź się!
           </Typography>
           <Typography variant="subtitle1" style={typographyStyles}>
             Aplikacja "Odpadometr, quiz o zero waste" powstała dzięki
-            zaangażowaniu wolontariuszy „Po-Dzielni”: Darii, Joannie, Kalinie,
-            Kubie, Monice, Paulinie i Sumo
-          </Typography>
-          <Typography variant="subtitle1" style={typographyStyles}>
-            przy współpracy Fundacji Enea. Korzystanie z niej jest darmowe.
+            zaangażowaniu wolontariuszy „Po-Dzielni”: Darii, Joanny, Kaliny,
+            Kuby, Moniki, Pauliny i Sumo dzięki wsparciu Fundacji Enea.
+           </Typography>
+          <Typography variant="subtitle1" style={typographyStyles}>            
+            Korzystanie z niej jest darmowe.
           </Typography>
         </Container>
         <Typography variant="subtitle2" style={{ textAlign: 'center' }}>
