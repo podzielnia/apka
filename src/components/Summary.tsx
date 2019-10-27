@@ -3,6 +3,7 @@ import Container from '@material-ui/core/Container';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
+import { FacebookProvider, ShareButton } from 'react-facebook';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { ReduxState } from 'store/reducers/rootReducer';
@@ -43,12 +44,6 @@ const TransparentButton = withStyles({
   },
 })(Button);
 
-const imgStyles = {
-  minHeight: '8rem',
-  height: '30rem',
-  marginTop: '1.5rem',
-};
-
 const linkStyles = {
   textDecoration: 'none',
   color: '#000',
@@ -71,7 +66,17 @@ export function Summary({ scoreCount }: Props) {
         </Typography>
         <Typography variant="subtitle1">Oby tak dalej!</Typography>
         <InnerContainer>
-          <StyledButton>UDOSTĘPNIJ NA FACEBOOKU</StyledButton>
+          <FacebookProvider appId="536840990411199">
+            <ShareButton
+              href="https://odpadometr.podzielnia.pl"
+              redirectURI="https://odpadometr.podzielnia.pl"
+              mobileIframe
+              quote="Quiz Po-Dzielni - sprawdź czy jesteś "
+              hashtag="#zerowaste"
+            >
+              <StyledButton>UDOSTĘPNIJ NA FACEBOOKU</StyledButton>
+            </ShareButton>
+          </FacebookProvider>
           <TransparentButton style={{ marginBottom: '10%' }}>
             <Link to="/" style={linkStyles}>
               Zagraj jeszcze raz
