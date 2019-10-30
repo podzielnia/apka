@@ -2,6 +2,7 @@ import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import menuImg from 'assets/img-menu.png';
 import React from 'react';
 import { FacebookProvider, ShareButton } from 'react-facebook';
 import { connect } from 'react-redux';
@@ -70,13 +71,13 @@ export function Summary({ scoreCount }: Props) {
             <ShareButton
               href="https://odpadometr.podzielnia.pl"
               redirectURI="https://odpadometr.podzielnia.pl"
-              mobileIframe
               quote="Quiz Po-Dzielni - sprawdź czy jesteś "
               hashtag="#zerowaste"
             >
               <StyledButton>UDOSTĘPNIJ NA FACEBOOKU</StyledButton>
             </ShareButton>
           </FacebookProvider>
+          <img src={menuImg} className="summary-img" />
           <TransparentButton style={{ marginBottom: '10%' }}>
             <Link to="/" style={linkStyles}>
               Zagraj jeszcze raz

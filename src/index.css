@@ -24,6 +24,12 @@ code {
   object-fit: contain;
 }
 
+.summary-img {
+  height: 10rem;
+  min-height: 1rem;
+  object-fit: contain;
+}
+
 .leaf-icon {
   height: 2rem;
 }
