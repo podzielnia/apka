@@ -71,7 +71,7 @@ export function Summary({ scoreCount }: Props) {
             <ShareButton
               href="https://odpadometr.podzielnia.pl"
               redirectURI="https://odpadometr.podzielnia.pl"
-              quote="Quiz Po-Dzielni - sprawdź czy jesteś "
+              quote="Quiz Po-Dzielni - sprawdź czy jesteś #zerowaste"
               hashtag="#zerowaste"
             >
               <StyledButton>UDOSTĘPNIJ NA FACEBOOKU</StyledButton>
