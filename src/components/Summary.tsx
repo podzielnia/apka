@@ -2,8 +2,9 @@ import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import tree from 'assets/tree.png';
+import menuImg from 'assets/img-menu.png';
 import React from 'react';
+import { FacebookProvider, ShareButton } from 'react-facebook';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { ReduxState } from 'store/reducers/rootReducer';
@@ -44,12 +45,6 @@ const TransparentButton = withStyles({
   },
 })(Button);
 
-const imgStyles = {
-  minHeight: '8rem',
-  height: '30rem',
-  marginTop: '1.5rem',
-};
-
 const linkStyles = {
   textDecoration: 'none',
   color: '#000',
@@ -72,28 +67,33 @@ export function Summary({ scoreCount }: Props) {
         </Typography>
         <Typography variant="subtitle1">Oby tak dalej!</Typography>
         <InnerContainer>
-          <StyledButton>UDOSTĘPNIJ NA FACEBOOKU</StyledButton>
-          <TransparentButton>
+          <FacebookProvider appId="536840990411199">
+            <ShareButton
+              href="https://odpadometr.podzielnia.pl"
+              redirectURI="https://odpadometr.podzielnia.pl"
+              quote="Quiz Po-Dzielni - sprawdź czy jesteś #zerowaste"
+              hashtag="#zerowaste"
+            >
+              <StyledButton>UDOSTĘPNIJ NA FACEBOOKU</StyledButton>
+            </ShareButton>
+          </FacebookProvider>
+          <img src={menuImg} className="summary-img" />
+          <TransparentButton style={{ marginBottom: '10%' }}>
             <Link to="/" style={linkStyles}>
               Zagraj jeszcze raz
             </Link>
           </TransparentButton>
-           <Typography variant="subtitle1">
-            <Link to="https://podzielnia.pl" style={linkStyles}>
-              Wróć do Po-Dzielni
-            </Link>
-            <Link to="https://patronite.pl/Po-Dzielnia" style={linkStyles}>
-              PATRONITE Po-Dzielni
-            </Link>             
-             
-          </Typography>         
+          <Button
+            variant="outlined"
+            href="https://podzielnia.pl"
+            style={{ marginBottom: '.5rem' }}
+          >
+            Wróć do Po-Dzielni
+          </Button>
+          <Button variant="outlined" href="https://patronite.pl/Po-Dzielnia">
+            PATRONITE Po-Dzielni
+          </Button>
         </InnerContainer>
-        <img
-          src={tree}
-          style={imgStyles}
-          alt="tree illustration"
-          className="summary__tree"
-        />
       </OuterContainer>
     </>
   );

@@ -91,7 +91,7 @@ export default function Modal({
   questionsLength,
 }: Props) {
   const btnNextQuestion = 'NASTĘPNE PYTANIE';
-  const btnLastQuestion = 'PRZEJDŹ DO POSUMOWANIA';
+  const btnLastQuestion = 'PRZEJDŹ DO PODSUMOWANIA';
 
   return (
     <div>
