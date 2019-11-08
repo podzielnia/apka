@@ -31,12 +31,18 @@ const InnerContainer = withStyles({
 
 const StyledButton = withStyles({
   root: {
+    minHeight: '2rem',
     margin: '1.5rem 0rem 1.5rem 0rem',
+    background: 'none',
+    '&:hover': {
+      background: 'none',
+    },
   },
 })(Button);
 
 const TransparentButton = withStyles({
   root: {
+    minHeight: '2rem',
     color: '#000',
     background: 'none',
     border: '2px solid #fff',
