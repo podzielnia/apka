@@ -73,7 +73,7 @@ export function Menu({ resetScoreCount }: Props) {
   return (
     <OuterContainer>
       <img src={logo} className="podzielnia-logo" />
-      <Typography variant="h6">aplikacja edukacyjna</Typography>
+      <Typography variant="h6">ODPADOMETR - aplikacja edukacyjna</Typography>
       <img src={menuImg} className="menu-img" />
       <Typography variant="subtitle2">
         Świat zagrożony katastrofą ekologiczną ma jeszcze szansę na równowagę.
